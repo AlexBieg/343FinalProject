@@ -11,7 +11,7 @@ myApp.config(function($stateProvider) {
 	.state('home', {
 		url:'/',
 		templateUrl: 'fragments/home.html',
-		//controller: 'HomeController',
+		controller: 'HomeController',
 	})
 	.state('sell', {
 		url:'/sell',
@@ -23,10 +23,10 @@ myApp.config(function($stateProvider) {
 		templateUrl: 'fragments/about.html',
 		//controller: 'aboutController'
 	})
-	.state('buy', {
-		url: '/buy',
-		templateUrl: 'fragments/buy.html',
-		//controller: 'buyController'
+	.state('charity', {
+		url: '/charity',
+		templateUrl: 'fragments/charity.html',
+		//controller: 'charityController'
 	})
 	.state('contact', {
 		url: '/contact',
@@ -41,7 +41,7 @@ myApp.config(function($stateProvider) {
 });
 
 //buy page
-myApp.controller('buyController', function($scope, $http) {
+myApp.controller('HomeController', function($scope, $http) {
 	var query = new Parse.Query(Products);
 	query.find({
 		success: function (results) {
