@@ -39,3 +39,11 @@ myApp.config(function($stateProvider) {
 		//controller: 'cartController'
 	});
 });
+
+$(document).ready(function() {
+	$('#myTabs a').click(function (e) {
+		e.preventDefault()
+		$(this).tab('show')
+	});
+	$('.dropdown-toggle').dropdown();
+});
