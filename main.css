@@ -3,3 +3,25 @@
 	line-height: 50px;
 	cursor: pointer;
 }
+
+#featCharity img, #featCharityInfo {
+	float: left;
+}
+
+#featCharityInfo {
+	padding-left: 20px;
+}
+
+#featCharityBannerInfo {
+	margin-top: 20px;
+	margin-bottom: 50px;
+}
+
+hr {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 96%;               
+  background-color: gray;
+  height: 1px;
+}
