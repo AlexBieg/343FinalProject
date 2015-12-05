@@ -1,6 +1,6 @@
 Parse.initialize("Wbo1H7gcYHPiHoWdEiPmDEC2SBXyzIac4VCPSFCL", "yiDwktPQEWp8Ea7K3YfxqvbaI5AKXicUmYn9N1Wf");
 
-var Items = Parse.Object.extend('Items');
+var Products = Parse.Object.extend('Products');
 var Charities = Parse.Object.extend('Charities');
 
 
@@ -38,4 +38,15 @@ myApp.config(function($stateProvider) {
 		templateUrl: 'fragments/cart.html',
 		//controller: 'cartController'
 	});
+});
+
+//buy page
+myApp.controller('buyController', function($scope, $http) {
+	var query = new Parse.Query(Products);
+	query.find({
+		success: function (results) {
+			console.log(results);
+			$scope.products = results;
+		}
+	})
 });
