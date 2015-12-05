@@ -28,5 +28,10 @@ myApp.config(function($stateProvider) {
 		url: '/contact',
 		templateUrl: 'fragments/contact.html',
 		//controller: 'contactController'
+	})
+	.state('cart', {
+		url: '/cart',
+		templateUrl: 'fragments/cart.html',
+		//controller: 'cartController'
 	});
 });
