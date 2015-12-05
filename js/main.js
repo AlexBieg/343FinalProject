@@ -24,7 +24,7 @@ myApp.config(function($stateProvider) {
 	})
 	.state('contact', {
 		url: '/about',
-		templateUrl: 'fragments/contact/html',
+		templateUrl: 'fragments/contact.html',
 		//controller: 'contactController'
 	});
 });
