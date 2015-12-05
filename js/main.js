@@ -1,6 +1,6 @@
 Parse.initialize("Wbo1H7gcYHPiHoWdEiPmDEC2SBXyzIac4VCPSFCL", "yiDwktPQEWp8Ea7K3YfxqvbaI5AKXicUmYn9N1Wf");
 
-var Items = Parse.Object.extend('Items');
+var Products = Parse.Object.extend('Products');
 var Charities = Parse.Object.extend('Charities');
 
 
@@ -11,7 +11,7 @@ myApp.config(function($stateProvider) {
 	.state('home', {
 		url:'/',
 		templateUrl: 'fragments/home.html',
-		//controller: 'HomeController',
+		controller: 'homeController',
 	})
 	.state('sell', {
 		url:'/sell',
@@ -46,4 +46,39 @@ $(document).ready(function() {
 		$(this).tab('show')
 	});
 	$('.dropdown-toggle').dropdown();
+});
+
+//buy page
+myApp.controller('homeController', function($scope, $http) {
+	var query = new Parse.Query(Products);
+	query.find({
+		success: function (results) {
+			console.log(results);
+			$scope.products = results;
+		}
+	})
+});
+
+myApp.controller('sellController', function($scope, $http) {
+	$scope.addItem = function() {
+		console.log("adding item");
+		var product = new Products();
+		product.set('name', $scope.name);
+		product.set('price', $scope.price);
+		product.set('region', $scope.region);
+		product.set('charity', $scope.charity);
+		product.set('image', $scope.image);
+		product.save(null, {
+			success: function() {
+				$scope.name = '';
+				$scope.price = '';
+				$scope.region = '';
+				$scope.charity = '';
+				$scope.image = null;
+			},
+			error: function(product, error) {
+				console.log(error);
+			}
+		})
+	}
 });
