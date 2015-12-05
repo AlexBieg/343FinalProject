@@ -4,27 +4,27 @@ myApp.config(function($stateProvider) {
     $stateProvider
 	.state('home', {
 		url:'/',
-		templateUrl: 'templates/home.html',
+		templateUrl: 'fragments/home.html',
 		//controller: 'HomeController',
 	})
 	.state('sell', {
 		url:'/sell',
-		templateUrl: 'templates/sell.html',
+		templateUrl: 'fragments/sell.html',
 		//controller: 'sellController',
 	})
 	.state('about', {
 		url: '/about',
-		templateUrl: 'templates/about.html',
+		templateUrl: 'fragments/about.html',
 		//controller: 'aboutController'
 	})
 	.state('buy', {
 		url: '/buy',
-		templateUrl: 'templates/about.html',
+		templateUrl: 'fragments/about.html',
 		//controller: 'buyController'
 	})
-	.state('contact' {
+	.state('contact', {
 		url: '/about',
-		templateUrl: 'templates/contact/html',
+		templateUrl: 'fragments/contact/html',
 		//controller: 'contactController'
 	});
 });
