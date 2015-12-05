@@ -23,10 +23,10 @@ myApp.config(function($stateProvider) {
 		templateUrl: 'fragments/about.html',
 		//controller: 'aboutController'
 	})
-	.state('buy', {
-		url: '/buy',
-		templateUrl: 'fragments/buy.html',
-		//controller: 'buyController'
+	.state('charity', {
+		url: '/charity',
+		templateUrl: 'fragments/charity.html',
+		//controller: 'charityController'
 	})
 	.state('contact', {
 		url: '/contact',
