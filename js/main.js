@@ -1,5 +1,9 @@
 Parse.initialize("Wbo1H7gcYHPiHoWdEiPmDEC2SBXyzIac4VCPSFCL", "yiDwktPQEWp8Ea7K3YfxqvbaI5AKXicUmYn9N1Wf");
 
+var Items = Parse.Object.extend('Items');
+var Charities = Parse.Object.extend('Charities');
+
+
 var myApp = angular.module('myApp', ['ui.router']);
 
 myApp.config(function($stateProvider) {
