@@ -23,7 +23,7 @@ myApp.config(function($stateProvider) {
 		//controller: 'buyController'
 	})
 	.state('contact', {
-		url: '/about',
+		url: '/contact',
 		templateUrl: 'fragments/contact.html',
 		//controller: 'contactController'
 	});
