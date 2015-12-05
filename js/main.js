@@ -11,7 +11,7 @@ myApp.config(function($stateProvider) {
 	.state('home', {
 		url:'/',
 		templateUrl: 'fragments/home.html',
-		controller: 'HomeController',
+		controller: 'homeController',
 	})
 	.state('sell', {
 		url:'/sell',
@@ -41,7 +41,7 @@ myApp.config(function($stateProvider) {
 });
 
 //buy page
-myApp.controller('HomeController', function($scope, $http) {
+myApp.controller('homeController', function($scope, $http) {
 	var query = new Parse.Query(Products);
 	query.find({
 		success: function (results) {
@@ -50,3 +50,28 @@ myApp.controller('HomeController', function($scope, $http) {
 		}
 	})
 });
+
+myApp.controller('sellController', function($scope, $http) {
+	$scope.addItem = function() {
+		console.log("adding item");
+		var product = new Products();
+		product.set('name', $scope.name);
+		product.set('price', $scope.price);
+		product.set('region', $scope.region);
+		product.set('charity', $scope.charity);
+		product.set('image', $scope.image);
+		product.save(null, {
+			success: function() {
+				$scope.name = '';
+				$scope.price = '';
+				$scope.region = '';
+				$scope.charity = '';
+				$scope.image = null;
+			},
+			error: function(product, error) {
+				console.log(error);
+			}
+		})
+	}
+});
+
