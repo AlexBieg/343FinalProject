@@ -54,7 +54,8 @@ myApp.controller('homeController', function($scope, $http) {
 	query.find({
 		success: function (results) {
 			console.log(results);
-			$scope.products = results;		}
+			$scope.products = results;
+		}
 	})
 });
 
@@ -82,6 +83,42 @@ myApp.controller('sellController', function($scope, $http) {
 	}
 });
 
-myApp.controller('homeController', function($scope) {
-	
+var checkLogged = function() {
+	if(Parse.User.current() != null) {
+		$('#login').hide();
+	}
+}
+
+$(function() {
+	checkLogged();
+
+	$('#sign-up-button').click(function() {
+		var form = $(this).parent();
+		var user = new Parse.User();
+		user.set("username", form.find('#user').val());
+		user.set("password", form.find('#pass').val());
+		user.signUp(null, {
+			success: function(user) {
+				console.log('signed up');
+			},
+			error: function(user, error) {
+				console.log(error);
+				$('#user-error').html(error.message);
+			}
+		})
+	});
+
+	$('#login-button').click(function() {
+		var form = $(this).parent();
+		Parse.User.logIn(form.find('#user').val(), form.find('#pass').val()).then(
+			function(user) {
+				console.log('signed user in');
+			},
+
+			function(error) {
+				console.log(error);
+				$('#user-error').html(error.message);
+			}
+		);
+	})
 });
