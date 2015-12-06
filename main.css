@@ -1,3 +1,6 @@
+@import url(https://fonts.googleapis.com/css?family=Fjalla+One);
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
 body {
 	overflow-y: scroll;
 }
@@ -7,7 +10,6 @@ body {
 	line-height: 50px;
 	cursor: pointer;
 }
-@import url(http://fonts.googleapis.com/css?family=Roboto);
 
 /****** LOGIN MODAL ******/
 .loginmodal-container {
@@ -145,4 +147,34 @@ footer {
 
 #viewContainer {
 	padding-bottom: 7%;
+}
+
+/****** LOGIN MODAL ******/
+
+h1{
+	font-family: 'Fjalla One', sans-serif;
+}
+
+p{
+	font-family: 'Roboto', sans-serif;
+	font-size: 1.2em;
+	margin-right:1.8em;
+}
+
+.pic{
+	margin-top:1em;
+}
+
+.position{
+	font-style: italic;
+	margin-top: .3em;
+	font-size: .8em;
+	color:#857E7E;
+}
+
+h4{
+	display:inline-block;
+	font-family: 'Roboto', sans-serif;
+	font-size: 1.2em;
+	margin-left: 1em;
 }
