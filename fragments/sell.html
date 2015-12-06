@@ -1,6 +1,6 @@
 <<<<<<< HEAD
 
-<p>Sell</p>
+
 <form>
 	<label for="name">Product Name: </label>
 	<input id="name" type="text" class="form-control">
@@ -16,10 +16,10 @@
 </form>
 
 
-=======
+
 <div ng-controller='sellController'>	
 	<p>Sell</p>
-	<form ng-submit="addItem()">
+	<form name="addItemForm" ng-submit="addItem()">
 		<label for="name">Product Name: </label>
 		<input ng-model="name" id="name" type="text" class="form-control">
 		<label for="price">Price: </label>
@@ -28,9 +28,9 @@
 		<input ng-model="region" id="region" type="text" class="form-control">
 		<label for="charity">Charity: </label>
 		<input ng-model="charity" id="charity" type="text" class="form-control"> 
-		<label for="picture">Image: </label>
-		<input ng-model="image" type="file" id="pic" accept="image/*" class="form-control">
+		<label for="picture">Image URL: </label>
+		<input ng-model="image" type="text" id="picture" class="form-control">
 		<button id="add-product" type="submit" class="btn btn-primary">Add Product</button>
 	</form>
 </div>
->>>>>>> eeb1e3dbb9132dbc8c32ae381d6f20d39482d46c
+
