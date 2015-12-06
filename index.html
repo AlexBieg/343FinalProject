@@ -18,14 +18,13 @@
     	<link rel="stylesheet" href="main.css"/>
 	</head>
 	<body ng-app="myApp">
-		<header class="container">
-			
+		<header class="container">			
 			<div class="page-header">
   				<h1>Placeholder Title</h1>	
 			</div>
 			<nav class="navbar navbar-default">
 				<div class="container-fluid">
-				    <div class="navbar-header">
+				    <div>
 					    <ul class="nav navbar-nav">
 						    <li><a class="navbar-brand link" ui-sref="home">Home</a></li>
 						    <li><a class="navbar-brand link" ui-sref="sell">Sell</a></li>
@@ -42,7 +41,7 @@
 					    	</li>
 				    	</ul>
 				    	<ul class="nav navbar-nav" id="loginList">
-					    	<li><span class="glyphicon glyphicon-shopping-cart navbar-right" ui-sref="cart"></span></li>
+					    	<li id="cart"><span class="glyphicon glyphicon-shopping-cart navbar-right" ui-sref="cart"></span></li>
 
 					    	<li>
 					    		<button class="btn btn-primary navbar-right" id="loginButton">Log In
