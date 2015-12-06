@@ -1,4 +1,27 @@
-<p>Home</p>
-<div ng-repeat='product in products'>
-	
+  <!-- Nav tabs -->
+<ul class="nav nav-tabs" role="tablist">
+	<li role="presentation" class="active"><a href="#featured" aria-controls="home" role="tab" data-toggle="tab">Featured</a></li>
+	<li role="presentation"><a href="#newest" aria-controls="profile" role="tab" data-toggle="tab">Newest</a></li>
+	<li role="presentation"><a href="#distance" aria-controls="messages" role="tab" data-toggle="tab">Distance</a></li>
+	<li role="presentation" class="dropdown">
+		<div class="dropdown tab-pane" role="tab" data-toggle="tab">
+			<a aria-expanded="false" href="#" id="priceDropdown" class="dropdown-toggle" data-toggle="dropdown" aria-controls="price">
+			Price 
+			<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu" aria-labelledby="dLabel">
+				<li><a href="#lowHigh" aria-controls="lowHigh" role="tab" data-toggle="tab">Low to High</a></li>
+				<li><a href="#highLow" aria-controls="highLow" role="tab" data-toggle="tab">High to Low</a></li>
+			</ul>
+		</div>
+	</li>
+</ul>
+
+  <!-- Tab panes -->
+<div class="tab-content">
+	<div role="tabpanel" class="tab-pane active" id="featured">Featured</div>
+	<div role="tabpanel" class="tab-pane" id="newest">Newest</div>
+	<div role="tabpanel" class="tab-pane" id="distance">Distance</div>
+	<div role="tabpanel" class="tab-pane" id="lowHigh">Low to High</div>
+	<div role="tabpanel" class="tab-pane" id="highLow">High to Low</div>
 </div>

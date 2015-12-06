@@ -40,6 +40,14 @@ myApp.config(function($stateProvider) {
 	});
 });
 
+$(document).ready(function() {
+	$('#myTabs a').click(function (e) {
+		e.preventDefault()
+		$(this).tab('show')
+	});
+	$('.dropdown-toggle').dropdown();
+});
+
 //buy page
 myApp.controller('homeController', function($scope, $http) {
 	var query = new Parse.Query(Products);
@@ -74,4 +82,3 @@ myApp.controller('sellController', function($scope, $http) {
 		})
 	}
 });
-

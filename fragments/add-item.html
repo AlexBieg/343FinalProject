@@ -1,0 +1,62 @@
+<div class="container-fluid">
+<div class="form-group">
+<div id="items">
+<li>
+	<ul> Title <input type="text" class="form-control" placeholder=""> </ul>		
+	<ul> Price <input type="text" class="form-control" placeholder=""> </ul>
+	<ul> Region <input type="text" class="form-control" placeholder=""> </ul>
+	<ul> Charity <input type="text" class="form-control" placeholder=""></ul>
+	<div class="form-group">
+		<textarea class="form-control" id ="review" rows="3" placeholder="Write your review here"></textarea>
+    </div>
+</li>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+<form id="fileupload" name="fileupload" enctype="multipart/form-data" method="post">
+  <fieldset>
+    <input type="file" name="fileselect" id="fileselect"></input>
+    <input id="uploadbutton" type="button" value="Upload to Parse"/>
+  </fieldset>
+</form>
+
+<script type="text/javascript">
+  $(function() {
+    var file;
+
+    // Set an event listener on the Choose File field.
+    $('#fileselect').bind("change", function(e) {
+      var files = e.target.files || e.dataTransfer.files;
+      // Our file var now holds the selected file
+      file = files[0];
+    });
+
+    // This function is called when the user clicks on Upload to Parse. It will create the REST API request to upload this image to Parse.
+    $('#uploadbutton').click(function() {
+      var serverUrl = 'https://api.parse.com/1/files/' + file.name;
+
+      $.ajax({
+        type: "POST",
+        beforeSend: function(request) {
+          request.setRequestHeader("X-Parse-Application-Id", 'MY-APP-ID');
+          request.setRequestHeader("X-Parse-REST-API-Key", 'MY-REST-API-ID');
+          request.setRequestHeader("Content-Type", file.type);
+        },
+        url: serverUrl,
+        data: file,
+        processData: false,
+        contentType: false,
+        success: function(data) {
+          alert("File available at: " + data.url);
+        },
+        error: function(data) {
+          var obj = jQuery.parseJSON(data);
+          alert(obj.error);
+        }
+      });
+    });
+
+
+  });
+</script>
+</div>
+</div>
