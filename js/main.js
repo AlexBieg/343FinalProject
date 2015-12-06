@@ -1,11 +1,13 @@
+//Parse stuff
 Parse.initialize("Wbo1H7gcYHPiHoWdEiPmDEC2SBXyzIac4VCPSFCL", "yiDwktPQEWp8Ea7K3YfxqvbaI5AKXicUmYn9N1Wf");
 
 var Products = Parse.Object.extend('Products');
 var Charities = Parse.Object.extend('Charities');
 
-
+//angular stuff
 var myApp = angular.module('myApp', ['ui.router']);
 
+//ui config
 myApp.config(function($stateProvider) {
     $stateProvider
 	.state('home', {
@@ -40,15 +42,7 @@ myApp.config(function($stateProvider) {
 	});
 });
 
-$(document).ready(function() {
-	$('#myTabs a').click(function (e) {
-		e.preventDefault()
-		$(this).tab('show')
-	});
-	$('.dropdown-toggle').dropdown();
-});
-
-//buy page
+//home page
 myApp.controller('homeController', function($scope, $http) {
 	var query = new Parse.Query(Products);
 	query.find({
@@ -59,6 +53,7 @@ myApp.controller('homeController', function($scope, $http) {
 	})
 });
 
+//sell controller
 myApp.controller('sellController', function($scope, $http) {
 	$scope.addItem = function() {
 		var product = new Products();
@@ -83,13 +78,44 @@ myApp.controller('sellController', function($scope, $http) {
 	}
 });
 
+//logout current user
+var logOutUser = function() {
+	Parse.User.logOut().then(function() {
+		location.reload();
+	});
+}
+
+//chek if a user is logged in and show correct info
 var checkLogged = function() {
 	if(Parse.User.current() != null) {
-		$('#login').hide();
+		$('#loginButton').hide();
+
+		var logOut = $("<button>Log Out</button>");
+		logOut.addClass("btn");
+		logOut.addClass("btn-primary");
+		logOut.click(function() {
+			logOutUser();
+		})
+
+		var hello = $("<span>");
+		hello.html('Welcome back ' + Parse.User.current().getUsername() + "!")
+
+		var li = $("<li>");
+		li.html(hello);
+		li.append(logOut);
+
+		$('#loginList').append(li)
 	}
 }
 
+//when document is finshed loading do this
 $(function() {
+	$('#myTabs a').click(function (e) {
+		e.preventDefault()
+		$(this).tab('show')
+	});
+	$('.dropdown-toggle').dropdown();
+
 	checkLogged();
 
 	$('#sign-up-button').click(function() {
@@ -100,6 +126,7 @@ $(function() {
 		user.signUp(null, {
 			success: function(user) {
 				console.log('signed up');
+				location.reload();
 			},
 			error: function(user, error) {
 				console.log(error);
@@ -113,6 +140,7 @@ $(function() {
 		Parse.User.logIn(form.find('#user').val(), form.find('#pass').val()).then(
 			function(user) {
 				console.log('signed user in');
+				location.reload();
 			},
 
 			function(error) {
