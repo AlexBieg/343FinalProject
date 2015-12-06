@@ -137,3 +137,12 @@ hr {
 #loginList {
 	float: right;
 }
+
+footer { 
+	bottom: 0;
+	padding-bottom: 3%;
+}
+
+#viewContainer {
+	padding-bottom: 7%;
+}
