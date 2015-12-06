@@ -127,3 +127,13 @@ hr {
   background-color: gray;
   height: 1px;
 }
+
+#loginButton {
+	position: relative;
+	line-height: 25px;
+	top: 6.25px;
+}
+
+#loginList {
+	float: right;
+}

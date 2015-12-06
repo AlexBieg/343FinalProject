@@ -54,8 +54,7 @@ myApp.controller('homeController', function($scope, $http) {
 	query.find({
 		success: function (results) {
 			console.log(results);
-			$scope.products = results;
-		}
+			$scope.products = results;		}
 	})
 });
 
