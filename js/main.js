@@ -61,20 +61,20 @@ myApp.controller('homeController', function($scope, $http) {
 
 myApp.controller('sellController', function($scope, $http) {
 	$scope.addItem = function() {
-		console.log("adding item");
 		var product = new Products();
 		product.set('name', $scope.name);
 		product.set('price', $scope.price);
 		product.set('region', $scope.region);
 		product.set('charity', $scope.charity);
 		product.set('image', $scope.image);
+		$scope.name = '';
+		$scope.price = '';
+		$scope.region = '';
+		$scope.charity = '';
+		$scope.image = '';
 		product.save(null, {
 			success: function() {
 				$scope.name = '';
-				$scope.price = '';
-				$scope.region = '';
-				$scope.charity = '';
-				$scope.image = null;
 			},
 			error: function(product, error) {
 				console.log(error);
