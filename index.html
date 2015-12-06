@@ -30,7 +30,6 @@
 						    <li><a class="navbar-brand link" ui-sref="sell">Sell</a></li>
 						    <li><a class="navbar-brand link" ui-sref="charity">Charities</a></li>
 						    <li><a class="navbar-brand link" ui-sref="about">About</a></li>
-						    <li><a class="navbar-brand link" ui-sref="contact">Contact</a></li>
 						    <li>
 						    	<form class="navbar-form navbar-left" role="search">
 							        <div class="form-group">
@@ -41,10 +40,14 @@
 					    	</li>
 				    	</ul>
 				    	<ul class="nav navbar-nav" id="loginList">
+<<<<<<< HEAD
 					    	<li id="cart"><span class="glyphicon glyphicon-shopping-cart navbar-right" ui-sref="cart"></span></li>
+=======
+					    	<li><span class="glyphicon glyphicon-shopping-cart" ui-sref="cart"></span></li>
+>>>>>>> 8186e380f58272fa15b47422305e2193b4fd2311
 
 					    	<li>
-					    		<button class="btn btn-primary navbar-right" id="loginButton">Log In
+					    		<button class="btn btn-primary" id="loginButton">Log In
 			    					<a id="login" href="#" data-toggle="modal" data-target="#login-modal"></a>
 			    					<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
 			    		  				<div class="modal-dialog">
@@ -69,6 +72,12 @@
 			    </div>
 			</nav>
 		</header>
-		<div class="container" ui-view></div>
+		<div class="container" id="viewContainer" ui-view></div>
+		<footer class="container">
+			<p>
+				If you have any comments, questions or concerns please don't hesitate to
+				<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top">Contact us</a>
+			</p>
+		</footer>
 	</body>
 </html>

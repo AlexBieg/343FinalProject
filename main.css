@@ -140,12 +140,22 @@ hr {
 	float: right;
 }
 
-<<<<<<< HEAD
+
 
 #cart{
   margin-right:20px;
 }
-=======
+
+footer { 
+	bottom: 0;
+	padding-bottom: 3%;
+}
+
+#viewContainer {
+	padding-bottom: 7%;
+}
+
+
 /****** LOGIN MODAL ******/
 
 h1{
@@ -174,5 +184,8 @@ h4{
 	font-family: 'Roboto', sans-serif;
 	font-size: 1.2em;
 	margin-left: 1em;
+
 }
->>>>>>> 94398169e901206fdd5f6b5a947a708cae50f94a
+
+}
+
