@@ -8,8 +8,11 @@ body {
 .glyphicon-shopping-cart {
 	font-size: 35px;
 	line-height: 50px;
+}
+
+#cartButton {
 	cursor: pointer;
-	margin-right: 10px;
+	margin-right: 20px;
 }
 
 /****** LOGIN MODAL ******/
