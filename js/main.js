@@ -82,3 +82,7 @@ myApp.controller('sellController', function($scope, $http) {
 		})
 	}
 });
+
+myApp.controller('homeController', function($scope) {
+	
+});
