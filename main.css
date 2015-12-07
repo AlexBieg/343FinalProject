@@ -206,6 +206,9 @@ h4{
 	margin-left: 1em;
 
 }
-
+/** Charity images **/
+#images img {
+  max-height:200px;
+  padding:10px;
 }
-
+}
