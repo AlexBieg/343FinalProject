@@ -211,4 +211,8 @@ h4{
   max-height:200px;
   padding:10px;
 }
+
+/****SELL PAGE****/
+#sellForm input, #sellForm textarea {
+	margin-bottom: 10px;
 }
