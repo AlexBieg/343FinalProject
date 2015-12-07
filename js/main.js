@@ -8,7 +8,7 @@ var Charities = Parse.Object.extend('Charities');
 var myApp = angular.module('myApp', ['ui.router']);
 
 //ui config
-myApp.config(function($stateProvider) {
+myApp.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
 	.state('home', {
 		url:'/',
@@ -40,6 +40,8 @@ myApp.config(function($stateProvider) {
 		templateUrl: 'fragments/cart.html',
 		//controller: 'cartController'
 	});
+
+	$urlRouterProvider.when('', '/');
 });
 
 //home page
