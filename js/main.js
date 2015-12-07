@@ -5,7 +5,7 @@ var Products = Parse.Object.extend('Products');
 var Charities = Parse.Object.extend('Charities');
 
 //angular stuff
-var myApp = angular.module('myApp', ['ui.router']);
+var myApp = angular.module('myApp', ['ui.router',]);
 
 //ui config
 myApp.config(function($stateProvider, $urlRouterProvider) {
