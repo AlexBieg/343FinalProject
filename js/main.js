@@ -6,7 +6,7 @@ var Products = Parse.Object.extend('Products');
 //angular stuff
 var myApp = angular.module('myApp', ['ui.router', 'firebase']);
 
-var myApp = angular.module('myApp', ['ui.router',]);
+
 
 //ui config
 myApp.config(function($stateProvider, $urlRouterProvider) {
@@ -106,16 +106,13 @@ myApp.controller('sellController', function($scope, $http) {
 
 });
 
+
 myApp.controller('charityController', function($scope, $firebaseArray){
   var ref = new Firebase("https://charitylist.firebaseio.com/");
   var projRef = ref.child("projects");
   $scope.projects = $firebaseArray(projRef);
 })
 
-myApp.controller('cartController', function($scope, $http) {
-	var cart = Parse.User.current().get('cart');
-	console.log(cart);
-});
 
 //logout current user
 var logOutUser = function() {
