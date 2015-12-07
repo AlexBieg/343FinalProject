@@ -3,6 +3,7 @@ Parse.initialize("Wbo1H7gcYHPiHoWdEiPmDEC2SBXyzIac4VCPSFCL", "yiDwktPQEWp8Ea7K3Y
 
 var Products = Parse.Object.extend('Products');
 var Charities = Parse.Object.extend('Charities');
+var Carts = Parse.Object.extend('Carts');
 
 //angular stuff
 var myApp = angular.module('myApp', ['ui.router',]);
@@ -59,7 +60,8 @@ myApp.controller('homeController', function($scope, $http) {
 					region: object.get('region'),
 					charity: object.get('charity'),
 					image: object.get('image'),
-					user: object.get('user')
+					user: object.get('user'),
+					id: object.id
 				}
 				$scope.products.push(product);
 			}
@@ -99,6 +101,11 @@ myApp.controller('sellController', function($scope, $http) {
 			}
 		})
 	}
+});
+
+myApp.controller('cartController', function($scope, $http) {
+	var cart = Parse.User.current().get('cart');
+	console.log(cart);
 });
 
 //logout current user
@@ -146,10 +153,14 @@ $(function() {
 		var user = new Parse.User();
 		user.set("username", form.find('#user').val());
 		user.set("password", form.find('#pass').val());
-		user.set("products", []);
+		user.set("cart", []);
 		user.signUp(null, {
 			success: function(user) {
 				console.log('signed up');
+				var cart = new Carts();
+				cart.set('user', user.id);
+				cart.set('contents', []);
+				cart.save(null, {});
 				location.reload();
 			},
 			error: function(user, error) {
