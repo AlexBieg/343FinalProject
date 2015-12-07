@@ -7,6 +7,7 @@ var Products = Parse.Object.extend('Products');
 var myApp = angular.module('myApp', ['ui.router', 'firebase']);
 
 
+
 //ui config
 myApp.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
@@ -101,6 +102,8 @@ myApp.controller('sellController', function($scope, $http) {
 			}
 		})
 	}
+	
+
 });
 
 
@@ -109,6 +112,7 @@ myApp.controller('charityController', function($scope, $firebaseArray){
   var projRef = ref.child("projects");
   $scope.projects = $firebaseArray(projRef);
 })
+
 
 //logout current user
 var logOutUser = function() {
