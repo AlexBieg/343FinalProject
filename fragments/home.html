@@ -17,7 +17,7 @@
 
   <!-- Tab panes -->
 <div class="tab-content">
-	<div role="tabpanel" class="tab-pane active" id="featured">
+	<div role="tabpanel" class="tab-pane" ng-class="{active: selectedTab == 1}" id="featured">
 		<div class="row">
 			<div ng-repeat="product in products" class="col-sm-6 col-md-4">
 				<div class="thumbnail" id="{{product.id}}">
@@ -33,8 +33,8 @@
 	</div>
 
 
-	<div role="tabpanel" class="tab-pane" id="newest">Newest</div>
-	<div role="tabpanel" class="tab-pane" id="distance">Distance</div>
-	<div role="tabpanel" class="tab-pane" id="lowHigh">Low to High</div>
-	<div role="tabpanel" class="tab-pane" id="highLow">High to Low</div>
+	<div role="tabpanel" class="tab-pane" ng-class="{active: selectedTab == 2}" id="newest">Newest</div>
+	<div role="tabpanel" class="tab-pane" ng-class="{active: selectedTab == 3}" id="distance">Distance</div>
+	<div role="tabpanel" class="tab-pane" ng-class="{active: selectedTab == 4}" id="lowHigh">Low to High</div>
+	<div role="tabpanel" class="tab-pane" ng-class="{active: selectedTab == 5}" id="highLow">High to Low</div>
 </div>

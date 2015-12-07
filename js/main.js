@@ -1,12 +1,14 @@
 //Parse stuff
 Parse.initialize("Wbo1H7gcYHPiHoWdEiPmDEC2SBXyzIac4VCPSFCL", "yiDwktPQEWp8Ea7K3YfxqvbaI5AKXicUmYn9N1Wf");
 
-var Products = Parse.Object.extend('Products');
-var Charities = Parse.Object.extend('Charities');
-var Carts = Parse.Object.extend('Carts');
+var Products = Parse.Object.extend('Products');	
 
 //angular stuff
+<<<<<<< HEAD
+var myApp = angular.module('myApp', ['ui.router', 'firebase']);
+=======
 var myApp = angular.module('myApp', ['ui.router',]);
+>>>>>>> 12f8118e1f88532e28bda217cc9881ad17b724e8
 
 //ui config
 myApp.config(function($stateProvider, $urlRouterProvider) {
@@ -29,7 +31,7 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 	.state('charity', {
 		url: '/charity',
 		templateUrl: 'fragments/charity.html',
-		//controller: 'charityController'
+		controller: 'charityController'
 	})
 	.state('contact', {
 		url: '/contact',
@@ -47,6 +49,7 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 
 //home page
 myApp.controller('homeController', function($scope, $http) {
+	$scope.selectedTab = 1;
 	$scope.products = [];
 	var query = new Parse.Query(Products);
 	query.find({
@@ -105,11 +108,19 @@ myApp.controller('sellController', function($scope, $http) {
 
 });
 
+<<<<<<< HEAD
+myApp.controller('charityController', function($scope, $firebaseArray){
+  var ref = new Firebase("https://charitylist.firebaseio.com/");
+  var projRef = ref.child("projects");
+  $scope.projects = $firebaseArray(projRef);
+})
+=======
 myApp.controller('cartController', function($scope, $http) {
 	var cart = Parse.User.current().get('cart');
 	console.log(cart);
 });
 
+>>>>>>> 12f8118e1f88532e28bda217cc9881ad17b724e8
 //logout current user
 var logOutUser = function() {
 	Parse.User.logOut().then(function() {
@@ -159,10 +170,6 @@ $(function() {
 		user.signUp(null, {
 			success: function(user) {
 				console.log('signed up');
-				var cart = new Carts();
-				cart.set('user', user.id);
-				cart.set('contents', []);
-				cart.save(null, {});
 				location.reload();
 			},
 			error: function(user, error) {

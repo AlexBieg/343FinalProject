@@ -1,0 +1,65 @@
+{
+  "projects": {
+    "China":{
+      "title": "China Women's Development Foundation Introduction",
+      "image": "fragments/img/china.jpg",
+      "link": "google.com",
+      "description": "This project demonstrates creating a flexible website with HTML and CSS. The website                       is functional both in web and mobile sites." 
+    },
+    
+    "India":{
+      "title": "Samuha",
+      "image": "fragments/img/india.jpg",
+      "link": "google.com",
+      "description": "This project created an interactive map of crowd sourced police data using leaflet.                       Users can see statistics on the police data as well as filter data based on race"
+    },
+    
+    "Ethiopia":{
+      "title": "Save the Children Ethiopia",
+      "image": "fragments/img/ethiopia.jpg",
+      "link": "google.com",
+      "description": "This project used angular to request data from the Spotify API. Users are able to                         search for an album, and a list of albums would show up. The user can then choose                         from the album and all of the songs in the album will show up, which could be                             sampled as well."
+    },
+    
+
+    "Taiwan":{
+      "title": "Tzu Chi",
+      "image": "fragments/img/taiwan.jpg",
+      "link": "google.com",
+      "description": "This project used angular to request data from the Spotify API. Users are able to                         search for an album, and a list of albums would show up. The user can then choose                         from the album and all of the songs in the album will show up, which could be                             sampled as well."
+    },
+    
+    "South Korea":{
+      "title": "People for Successful Corean Reunification",
+      "image": "fragments/img/korea.jpg",
+      "link": "google.com",
+      "description": "This project used angular to request data from the Spotify API. Users are able to                         search for an album, and a list of albums would show up. The user can then choose                         from the album and all of the songs in the album will show up, which could be                             sampled as well."
+    },
+    
+    "Thailand":{
+      "title": "Animal Sanctuary",
+      "image": "fragments/img/thailand.jpg",
+      "link": "google.com",
+      "description": "This project used angular to request data from the Spotify API. Users are able to                         search for an album, and a list of albums would show up. The user can then choose                         from the album and all of the songs in the album will show up, which could be                             sampled as well."
+    },
+    
+
+    "Syria":{
+      "title": "Karam Foundation",
+      "image": "fragments/img/syria.jpg",
+      "link": "google.com",
+      "description": "This project used angular to request data from the Spotify API. Users are able to                         search for an album, and a list of albums would show up. The user can then choose                         from the album and all of the songs in the album will show up, which could be                             sampled as well."
+    },
+    
+    "Indonesia":{
+      "title": "The Smile Foundation of Bali",
+      "image": "fragments/img/indonesia.jpg",
+      "link": "google.com/",
+      "description": "This project demonstrates using Parse to store data by having users rate an item and including a short description of a review for the item."
+    }
+  
+
+  
+}
+ 
+}
