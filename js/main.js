@@ -60,7 +60,8 @@ myApp.controller('homeController', function($scope, $http) {
 					region: object.get('region'),
 					charity: object.get('charity'),
 					image: object.get('image'),
-					user: object.get('user')
+					user: object.get('user'),
+					id: object.id
 				}
 				$scope.products.push(product);
 			}
