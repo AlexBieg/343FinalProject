@@ -1,9 +1,7 @@
 //Parse stuff
 Parse.initialize("Wbo1H7gcYHPiHoWdEiPmDEC2SBXyzIac4VCPSFCL", "yiDwktPQEWp8Ea7K3YfxqvbaI5AKXicUmYn9N1Wf");
 
-var Products = Parse.Object.extend('Products');
-var Charities = Parse.Object.extend('Charities');
-var Carts = Parse.Object.extend('Carts');
+var Products = Parse.Object.extend('Products');	
 
 //angular stuff
 <<<<<<< HEAD
@@ -51,6 +49,7 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 
 //home page
 myApp.controller('homeController', function($scope, $http) {
+	$scope.selectedTab = 1;
 	$scope.products = [];
 	var query = new Parse.Query(Products);
 	query.find({
@@ -169,10 +168,6 @@ $(function() {
 		user.signUp(null, {
 			success: function(user) {
 				console.log('signed up');
-				var cart = new Carts();
-				cart.set('user', user.id);
-				cart.set('contents', []);
-				cart.save(null, {});
 				location.reload();
 			},
 			error: function(user, error) {
