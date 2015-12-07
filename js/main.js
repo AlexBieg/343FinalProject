@@ -101,6 +101,8 @@ myApp.controller('sellController', function($scope, $http) {
 			}
 		})
 	}
+	
+
 });
 
 myApp.controller('cartController', function($scope, $http) {
