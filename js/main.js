@@ -60,8 +60,8 @@ myApp.controller('homeController', function($scope, $http) {
 					user: object.get('user')
 				}
 				$scope.products.push(product);
-				console.log($scope.products);
 			}
+			console.log($scope.products);
 		}
 	})
 });
