@@ -44,17 +44,37 @@ myApp.config(function($stateProvider) {
 
 //home page
 myApp.controller('homeController', function($scope, $http) {
+	$scope.products = [];
 	var query = new Parse.Query(Products);
 	query.find({
 		success: function (results) {
 			console.log(results);
-			$scope.products = results;
+			for (var i = 0; i < results.length; i++) {
+				var object = results[i]
+				var product = {
+					name: object.get('name'),
+					price: object.get('price'),
+					region: object.get('region'),
+					charity: object.get('charity'),
+					image: object.get('image'),
+					user: object.get('user')
+				}
+				$scope.products.push(product);
+				console.log($scope.products);
+			}
 		}
 	})
 });
 
 //sell controller
 myApp.controller('sellController', function($scope, $http) {
+	console.log('checking user')
+	if (Parse.User.current() != null) {
+		$('.login-message').hide();
+		$('.logged-in').removeClass('hide');
+	}
+
+	//adds item to parse database
 	$scope.addItem = function() {
 		var product = new Products();
 		product.set('name', $scope.name);
@@ -62,6 +82,7 @@ myApp.controller('sellController', function($scope, $http) {
 		product.set('region', $scope.region);
 		product.set('charity', $scope.charity);
 		product.set('image', $scope.image);
+		product.set('user', Parse.User.current().getUsername());
 		$scope.name = '';
 		$scope.price = '';
 		$scope.region = '';
@@ -123,6 +144,7 @@ $(function() {
 		var user = new Parse.User();
 		user.set("username", form.find('#user').val());
 		user.set("password", form.find('#pass').val());
+		user.set("products", []);
 		user.signUp(null, {
 			success: function(user) {
 				console.log('signed up');

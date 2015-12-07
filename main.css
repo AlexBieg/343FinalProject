@@ -1,8 +1,27 @@
 @import url(https://fonts.googleapis.com/css?family=Fjalla+One);
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
+/*
+Basic Tags
+*/
 body {
 	overflow-y: scroll;
+}
+
+/*
+Custom id and classes
+*/
+.hide {
+  display: none;
+}
+
+/*
+Header
+*/
+.error {
+  color: red;
+  text-align: center;
+  font-weight: bold;
 }
 
 .glyphicon-shopping-cart {

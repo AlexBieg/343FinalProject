@@ -1,17 +1,21 @@
-<div ng-controller='sellController'>	
-	<p>Sell</p>
-	<form name="addItemForm" ng-submit="addItem()">
-		<label for="name">Product Name: </label>
-		<input ng-model="name" id="name" type="text" class="form-control">
-		<label for="price">Price: </label>
-		<input ng-model="price" id="price" type="text" class="form-control">
-		<label for="region">Region: </label>
-		<input ng-model="region" id="region" type="text" class="form-control">
-		<label for="charity">Charity: </label>
-		<input ng-model="charity" id="charity" type="text" class="form-control"> 
-		<label for="picture">Image URL: </label>
-		<input ng-model="image" type="text" id="picture" class="form-control">
-		<button id="add-product" type="submit" class="btn btn-primary">Add Product</button>
-	</form>
+<div class="logged-in hide">
+	<div ng-controller='sellController'>	
+		<form name="addItemForm" ng-submit="addItem()">
+			<label for="name">Product Name: </label>
+			<input ng-model="name" id="name" type="text" class="form-control">
+			<label for="price">Price: </label>
+			<input ng-model="price" id="price" type="text" class="form-control">
+			<label for="region">Region: </label>
+			<input ng-model="region" id="region" type="text" class="form-control">
+			<label for="charity">Charity: </label>
+			<input ng-model="charity" id="charity" type="text" class="form-control"> 
+			<label for="picture">Image URL: </label>
+			<input ng-model="image" type="text" id="picture" class="form-control">
+			<button id="add-product" type="submit" class="btn btn-primary">Add Product</button>
+		</form>
+	</div>
+</div>
+<div class="login-message">
+	<h2>Login to Sell Items</h2>
 </div>
 
