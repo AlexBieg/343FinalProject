@@ -71,6 +71,7 @@ myApp.controller('homeController', function($scope, $http) {
 
 	$scope.addToCart = function(id) {
 		addToCart(id);
+		showSuccess(id);
 	}
 });
 
@@ -78,6 +79,7 @@ myApp.controller('homeController', function($scope, $http) {
 myApp.controller('cartController', function($scope) {
 	if (Parse.User.current() != null) {
 		var items = Parse.User.current().get('cart');
+		console.log(items);
 		$scope.products = [];
 		for(var i = 0; i < items.length; i++) {
 			var id = items[i];
@@ -102,6 +104,10 @@ myApp.controller('cartController', function($scope) {
 				}
 			});
 		}
+	}
+
+	$scope.removeFromCart = function(id) {
+		removeFromCart(id);
 	}
 });
 
@@ -151,6 +157,26 @@ myApp.controller('charityController', function($scope){
 		$scope.$apply();
 	});
 });
+
+var removeFromCart = function(id) {
+	var cart = Parse.User.current().get('cart');
+	var newCart = [];
+	var notFound = true;
+	for (var i = 0; i < cart.length && notFound; i++) {
+		if (cart[i] == id) {
+			newCart = $.grep(cart, function(n, index) {
+				return (index != i);
+			});
+		}
+	}
+	Parse.User.current().set('cart', newCart);
+	Parse.User.current().save();
+	location.reload();
+}
+
+var showSuccess = function(id) {
+	$("#" + id).find('#success').removeClass('hide');
+}
 
 var addToCart = function(id) {
 	var cart = Parse.User.current().get('cart');
