@@ -102,8 +102,10 @@ myApp.controller('sellController', function($scope, $http) {
 			}
 		})
 	}
-	
-
+	$('#activateForm').click(function() {
+		$(this).hide();
+		$('#sellForm').removeClass('hide');
+	}); 
 });
 
 
