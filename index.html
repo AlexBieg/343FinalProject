@@ -3,9 +3,10 @@
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta charset="UTF-8">
-		
-		<title>INFO 343 Final Project</title>
-
+		<title>Relive</title>
+		<link rel="shortcut icon" href="shake1.png">
+		<!-- Include files -->
+		<link rel="stylesheet" href="main.css">
 		<!-- Include libraries -->
 		<script src="https://code.jquery.com/jquery.min.js"></script>
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -38,31 +39,30 @@
 				</div>
 	  		</div>			
 			<div class="page-header">
-  				<h1>Placeholder Title</h1>	
+  				<h2>RELIVE</h2>	
 			</div>
 			<nav class="navbar navbar-default">
 				<div class="container-fluid">
 				    <div>
 					    <ul class="nav navbar-nav">
-						    <li><a class="navbar-brand link" ui-sref="home">Home</a></li>
-						    <li><a class="navbar-brand link" ui-sref="sell">Sell</a></li>
-						    <li><a class="navbar-brand link" ui-sref="charity">Charities</a></li>
-						    <li><a class="navbar-brand link" ui-sref="about">About</a></li>
+						    <li><a href="#/">Home</a></li>
+						    <li><a href="#sell">Sell</a></li>
+						    <li><a href="#charity">Charities</a></li>
+						    <li><a href="#about">About</a></li>
 						    <li>
 						    	<form class="navbar-form navbar-left" role="search">
 							        <div class="form-group">
-							          <input type="text" class="form-control" placeholder="What are you looking for?">
+							          <input type="text" class="form-control" style="font-family: 'Roboto', sans-serif; font-size:1em" placeholder="What are you looking for?">
 							        </div>
 							        <button type="submit" class="btn btn-default">Search</button>
 						    	</form>
 					    	</li>
 				    	</ul>
 				    	<ul class="nav navbar-nav" id="loginList">
-					    	<li ui-sref="cart" id="cartButton"><p class="navbar-text">Shopping Cart</p><span class="glyphicon glyphicon-shopping-cart"></span></li>
-
+					    	<li ui-sref="cart" id="cartButton"><span class="glyphicon glyphicon-shopping-cart"></span></li>
 					    	<li id="loginButton">
 					    		<a id="login" href="#" data-toggle="modal" data-target="#login-modal">
-					    			<button class="btn btn-primary">Log In</button>
+					    			<button class="btn btn-primary" style="font-family: 'Roboto', sans-serif; font-size:1em">Log In</button>
 		    					</a>
 					    	</li>	
 					    </ul>

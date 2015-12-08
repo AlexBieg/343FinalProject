@@ -6,6 +6,8 @@ Basic Tags
 */
 body {
 	overflow-y: scroll;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2em;
 }
 
 /*
@@ -13,6 +15,25 @@ Custom id and classes
 */
 .hide {
   display: none;
+}
+
+
+/* 
+Nav
+*/
+
+h2{
+  font-family: 'Fjalla One', sans-serif;
+  font-size:5em;
+}
+
+li{
+  display:inline-block;
+}
+
+.glyphicon-shopping-cart{
+  width: 20px;
+  height: 20px;
 }
 
 /*
