@@ -4,21 +4,21 @@
       "title": "China Women's Development Foundation Introduction",
       "image": "img/china.jpg",
       "link": "google.com",
-      "description": "This project demonstrates creating a flexible website with HTML and CSS. The website                       is functional both in web and mobile sites." 
+      "description": "For a long time, Chinese women's group focuses on the masses of women are most concerned about, the most direct and most practical interests, in poverty around women, women's health, women entrepreneurship, the implementation of a series of charity projects, and achieved obvious social effect , organization and implementation of the Small Loans for Mothers, Mother Health Express, Mother Water Cellar, Poverty heroes mother funding plans, Mother parcels five projects were given the highest award the Chinese government charity - China Charity Award"
     },
     
     "India":{
       "title": "Samuha",
       "image": "img/india.jpg",
       "link": "google.com",
-      "description": "This project created an interactive map of crowd sourced police data using leaflet.                       Users can see statistics on the police data as well as filter data based on race"
+      "description": "SAMUHA works with vulnerable people to improve their quality of life within defined periods of time. SAMUHA derives its name from the Sanskrit. SAMUHA means an organised group or society. This reflects our belief that development is best sustained when undertaken through group processes."
     },
     
     "Ethiopia":{
       "title": "Save the Children Ethiopia",
       "image": "img/ethiopia.jpg",
       "link": "google.com",
-      "description": "This project used angular to request data from the Spotify API. Users are able to                         search for an album, and a list of albums would show up. The user can then choose                         from the album and all of the songs in the album will show up, which could be                             sampled as well."
+      "description": "Save the Children (SC) is the world's leading independent organization for children. Our mission is to inspire breakthroughs in the way the world treats children, and to achieve immediate and lasting change in their lives. Recognized for our commitment to accountability, ambition, collaboration, creativity and integrity, our work takes us into the heart of communities, where we help children and families help themselves. We work with other organizations, governments, non-profits and a variety of local partners while maintaining our own independence without political agenda or religious orientation.Save the Children Ethiopia works in 9 regions in Ethiopia with a current staff complement of approximately 1,600 staff."
     },
     
 
@@ -26,21 +26,21 @@
       "title": "Tzu Chi",
       "image": "img/taiwan.jpg",
       "link": "google.com",
-      "description": "This project used angular to request data from the Spotify API. Users are able to                         search for an album, and a list of albums would show up. The user can then choose                         from the album and all of the songs in the album will show up, which could be                             sampled as well."
+      "description": "Achieving wellbeing is the essence of human existence, but a variety of obstacles can hinder the goal and cause misery. Tzu Chi is an international humanitarian organization whose mission is to relieve the suffering of those in need, and create a better world for all."
     },
     
     "South Korea":{
       "title": "People for Successful Corean Reunification",
       "image": "img/korea.jpg",
       "link": "google.com",
-      "description": "This project used angular to request data from the Spotify API. Users are able to                         search for an album, and a list of albums would show up. The user can then choose                         from the album and all of the songs in the album will show up, which could be                             sampled as well."
+      "description": "Today, PSCORE continues this mission of improving human rights in North Korea and reunifying the Korean peninsula through a series of programs such as our Mentoring program and our Human Rights and Democracy program. We also provide emergency aid to North Korean refugees in China. PSCORE strives for mutual understanding and harmony between the two Koreas and aims to provide a platform to discuss topics such as democratization, human rights and social issues. We hope to bridge the gap between South Korea, North Korea and the international community."
     },
     
     "Thailand":{
       "title": "Animal Sanctuary",
       "image": "img/thailand.jpg",
       "link": "google.com",
-      "description": "This project used angular to request data from the Spotify API. Users are able to                         search for an album, and a list of albums would show up. The user can then choose                         from the album and all of the songs in the album will show up, which could be                             sampled as well."
+      "description": "It presently houses over ninety animals, all formerly unwanted or abused, domestic pets, farm animals and some wildlife. Twenty six cows, bulls and buffalos who escaped the slaughter house, also reside there. All the bulls have been sterilized. This is their home for life. Love Animal Sanctuary is situated on two separate properties in a small village, with a total of 17 rai."
     },
     
 
@@ -48,14 +48,14 @@
       "title": "Karam Foundation",
       "image": "img/syria.jpg",
       "link": "google.com",
-      "description": "This project used angular to request data from the Spotify API. Users are able to                         search for an album, and a list of albums would show up. The user can then choose                         from the album and all of the songs in the album will show up, which could be                             sampled as well."
+      "description": "We are dedicated to provide aid that matters and find the most effective & impactful ways to help the Syrian people. We call it the smart aid."
     },
     
     "Indonesia":{
       "title": "The Smile Foundation of Bali",
       "image": "img/indonesia.jpg",
       "link": "google.com/",
-      "description": "This project demonstrates using Parse to store data by having users rate an item and including a short description of a review for the item."
+      "description": "The Smile Foundation of Bali was founded in 2005 by Mary Northmore-Aziz at the suggestion of Dr. David David from the Australian Craniofacial Unit,[3] to identify those in need of craniofacial surgery. Dr. David David has continued his association as the chief adviser to the foundation. In December 2006 the foundation opened the Smile Shop, which was the first Op shop in Bali. It provides a source of income for the foundation through the sale of secondhand goods and old stock from local businesses."
     }
   
 
