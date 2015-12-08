@@ -65,8 +65,8 @@ myApp.controller('homeController', function($scope, $http) {
 					id: object.id
 				}
 				$scope.products.push(product);
+				$scope.$apply();
 			}
-			console.log($scope.products);
 		}
 	})
 });
@@ -87,6 +87,7 @@ myApp.controller('sellController', function($scope, $http) {
 		product.set('region', $scope.region);
 		product.set('charity', $scope.charity);
 		product.set('image', $scope.image);
+		product.set('description', $scope.description);
 		product.set('user', Parse.User.current().getUsername());
 		$scope.name = '';
 		$scope.price = '';
