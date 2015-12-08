@@ -65,6 +65,7 @@ myApp.controller('homeController', function($scope, $http) {
 					id: object.id
 				}
 				$scope.products.push(product);
+				$scope.$apply();
 			}
 			console.log($scope.products);
 		}
