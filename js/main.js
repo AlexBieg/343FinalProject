@@ -4,7 +4,7 @@ Parse.initialize("Wbo1H7gcYHPiHoWdEiPmDEC2SBXyzIac4VCPSFCL", "yiDwktPQEWp8Ea7K3Y
 var Products = Parse.Object.extend('Products');	
 
 //angular stuff
-var myApp = angular.module('myApp', ['ui.router', 'firebase']);
+var myApp = angular.module('myApp', ['ui.router']);
 
 
 
