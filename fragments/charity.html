@@ -1,6 +1,9 @@
 <div>
 	<h1>Current Charities</h1>
+	<div class="row">
 	<div class="charity" ng-repeat="charity in charities">
+		<div class="clearfix" ng-if="$index % 3 == 0"></div>
+        <div class="col-sm-4">
 		<div id="images">
 			<a  target="_blank" href='{{charity.link}}'>{{charity.title}}</a>
 			<br>
@@ -8,6 +11,9 @@
 			<img ng-src="{{charity.image}}" class="charity-img">
 			</a>
 			<p id="descript" title="{{charity.description}}">{{charity.description}}</p>
+		</div>
+		</div>
 		</div>		
+	</div>
 	</div>
 </div>
