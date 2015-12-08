@@ -78,32 +78,40 @@ myApp.controller('homeController', function($scope, $http) {
 //cart controller
 myApp.controller('cartController', function($scope) {
 	if (Parse.User.current() != null) {
-		var items = Parse.User.current().get('cart');
-		console.log(items);
-		$scope.products = [];
-		for(var i = 0; i < items.length; i++) {
-			var id = items[i];
-			var query = new Parse.Query(Products);
-			query.get(id, {
-				success: function(object) {
-					var item = {
-						name: object.get('name'),
-						price: object.get('price'),
-						region: object.get('region'),
-						charity: object.get('charity'),
-						image: object.get('image'),
-						user: object.get('user'),
-						id: object.id
-					}
-					$scope.products.push(item);
-					$scope.$apply();
-				},
+		var items = [];
+		Parse.User.current().fetch({
+			success: function(user) {
+				var items = user.get('cart');
+				console.log(items);
+				$scope.products = [];
+				for(var i = 0; i < items.length; i++) {
+					var id = items[i];
+					var query = new Parse.Query(Products);
+					query.get(id, {
+						success: function(object) {
+							var item = {
+								name: object.get('name'),
+								price: object.get('price'),
+								region: object.get('region'),
+								charity: object.get('charity'),
+								image: object.get('image'),
+								user: object.get('user'),
+								id: object.id
+							}
+							$scope.products.push(item);
+							$scope.$apply();
+						},
 
-				error: function(object, error) {
-					console.log(error);
+						error: function(object, error) {
+							console.log(error);
+						}
+					});
 				}
-			});
-		}
+			},
+			error: function(user, error) {
+				console.log(error);
+			}
+		});
 	}
 
 	$scope.removeFromCart = function(id) {
@@ -158,6 +166,7 @@ myApp.controller('charityController', function($scope){
 	});
 });
 
+//remove one of the given item id from the current users cart.
 var removeFromCart = function(id) {
 	var cart = Parse.User.current().get('cart');
 	var newCart = [];
@@ -167,11 +176,12 @@ var removeFromCart = function(id) {
 			newCart = $.grep(cart, function(n, index) {
 				return (index != i);
 			});
+			notFound = false;
 		}
 	}
 	Parse.User.current().set('cart', newCart);
 	Parse.User.current().save();
-	location.reload();
+	location.reload(true);
 }
 
 var showSuccess = function(id) {
