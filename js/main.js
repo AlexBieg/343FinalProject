@@ -180,11 +180,13 @@ var checkLogged = function() {
 		var logOut = $("<button>Log Out</button>");
 		logOut.addClass("btn");
 		logOut.addClass("btn-primary");
+		logOut.addClass("logOutButton");
 		logOut.click(function() {
 			logOutUser();
 		})
 
 		var hello = $("<span>");
+		hello.addClass("welcome");
 		hello.html('Welcome back ' + Parse.User.current().getUsername() + "!")
 
 		var li = $("<li>");
