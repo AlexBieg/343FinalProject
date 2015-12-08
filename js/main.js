@@ -78,20 +78,29 @@ myApp.controller('homeController', function($scope, $http) {
 myApp.controller('cartController', function($scope) {
 	if (Parse.User.current() != null) {
 		var items = Parse.User.current().get('cart');
-		console.log(items);
 		$scope.products = [];
 		for(var i = 0; i < items.length; i++) {
-			var object = products[i];
-			var item = {
-				name: object.get('name'),
-				price: object.get('price'),
-				region: object.get('region'),
-				charity: object.get('charity'),
-				image: object.get('image'),
-				user: object.get('user'),
-				id: object.id
-			}
-			$scope.products.push(item);
+			var id = items[i];
+			var query = new Parse.Query(Products);
+			query.get(id, {
+				success: function(object) {
+					var item = {
+						name: object.get('name'),
+						price: object.get('price'),
+						region: object.get('region'),
+						charity: object.get('charity'),
+						image: object.get('image'),
+						user: object.get('user'),
+						id: object.id
+					}
+					$scope.products.push(item);
+					$scope.$apply();
+				},
+
+				error: function(object, error) {
+					console.log(error);
+				}
+			});
 		}
 	}
 });
@@ -230,4 +239,5 @@ $(function() {
 			}
 		);
 	})
+	
 });
