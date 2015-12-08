@@ -21,11 +21,13 @@
 		<div class="row">
 			<div ng-repeat="product in products" class="col-sm-6 col-md-4">
 				<div class="thumbnail" id="{{product.id}}">
-					<img src="{{product.image}}" alt="{{product.name}}">
+					<a href="">
+						<img src="{{product.image}}" alt="{{product.name}}">
+					</a>
 					<div class="caption">
-						<h3>{{product.name}}</h3>
+						<a href="goToProductPage()"><h3>{{product.name}}</h3></a>
 						<p>{{product.charity}}</p>
-						<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+						<p><a href="#" class="btn btn-primary" role="button">Add to Cart</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
 					</div>
 				</div>
 			</div>

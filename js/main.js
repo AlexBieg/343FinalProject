@@ -39,7 +39,7 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 	.state('cart', {
 		url: '/cart',
 		templateUrl: 'fragments/cart.html',
-		//controller: 'cartController'
+		controller: 'cartController'
 	});
 
 	$urlRouterProvider.when('', '/');
