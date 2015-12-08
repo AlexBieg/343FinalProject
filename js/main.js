@@ -34,7 +34,7 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 	.state('cart', {
 		url: '/cart',
 		templateUrl: 'fragments/cart.html',
-		//controller: 'cartController'
+		controller: 'cartController'
 	});
 
 	$urlRouterProvider.when('', '/');
@@ -64,6 +64,36 @@ myApp.controller('homeController', function($scope, $http) {
 			}
 		}
 	})
+
+	$scope.showIfLogged = function() {
+		return isLogged();
+	}
+
+	$scope.addToCart = function(id) {
+		addToCart(id);
+	}
+});
+
+//cart controller
+myApp.controller('cartController', function($scope) {
+	if (Parse.User.current() != null) {
+		var items = Parse.User.current().get('cart');
+		console.log(items);
+		$scope.products = [];
+		for(var i = 0; i < items.length; i++) {
+			var object = products[i];
+			var item = {
+				name: object.get('name'),
+				price: object.get('price'),
+				region: object.get('region'),
+				charity: object.get('charity'),
+				image: object.get('image'),
+				user: object.get('user'),
+				id: object.id
+			}
+			$scope.products.push(item);
+		}
+	}
 });
 
 //sell controller
@@ -112,6 +142,18 @@ myApp.controller('charityController', function($scope){
 		$scope.$apply();
 	});
 });
+
+var addToCart = function(id) {
+	var cart = Parse.User.current().get('cart');
+	cart.push(id);
+	Parse.User.current().set('cart', cart);
+	Parse.User.current().save();
+}
+
+//retrun boolean indicating if user is logged in
+var isLogged = function() {
+	return Parse.User.current() != null;
+}
 
 
 //logout current user
