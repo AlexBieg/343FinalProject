@@ -31,11 +31,6 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 		templateUrl: 'fragments/charity.html',
 		controller: 'charityController'
 	})
-	.state('contact', {
-		url: '/contact',
-		templateUrl: 'fragments/contact.html',
-		//controller: 'contactController'
-	})
 	.state('cart', {
 		url: '/cart',
 		templateUrl: 'fragments/cart.html',
@@ -110,11 +105,13 @@ myApp.controller('sellController', function($scope, $http) {
 });
 
 
-myApp.controller('charityController', function($scope, $firebaseArray){
-  var ref = new Firebase("https://charitylist.firebaseio.com/");
-  var projRef = ref.child("projects");
-  $scope.projects = $firebaseArray(projRef);
-})
+myApp.controller('charityController', function($scope){
+	$.getJSON("charity-list.json", function(results) {
+		$scope.charities = results.charities;
+		console.log($scope.charities);
+		$scope.$apply();
+	});
+});
 
 
 //logout current user
