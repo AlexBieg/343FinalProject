@@ -1,5 +1,6 @@
-<div class="logged-in hide">
-	<div ng-controller='sellController'>	
+<div class="logged-in hide" id="sellDiv">
+	<button id="activateForm" class="btn btn-primary">Sell a Product</button>
+	<div ng-controller='sellController' class="hide" id="sellForm">	
 		<form name="addItemForm" ng-submit="addItem()">
 			<label for="name">Product Name: </label>
 			<input ng-model="name" id="name" type="text" class="form-control">
@@ -11,6 +12,8 @@
 			<input ng-model="charity" id="charity" type="text" class="form-control"> 
 			<label for="picture">Image URL: </label>
 			<input ng-model="image" type="text" id="picture" class="form-control">
+			<label for="description">Product Description: </label>
+			<textarea ng-model="description" id="description" class="form-control" rows="5"></textarea>
 			<button id="add-product" type="submit" class="btn btn-primary">Add Product</button>
 		</form>
 	</div>
@@ -18,4 +21,3 @@
 <div class="login-message">
 	<h2>Login to Sell Items</h2>
 </div>
-

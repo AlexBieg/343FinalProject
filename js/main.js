@@ -1,14 +1,15 @@
 //Parse stuff
 Parse.initialize("Wbo1H7gcYHPiHoWdEiPmDEC2SBXyzIac4VCPSFCL", "yiDwktPQEWp8Ea7K3YfxqvbaI5AKXicUmYn9N1Wf");
 
-var Products = Parse.Object.extend('Products');
-var Charities = Parse.Object.extend('Charities');
+var Products = Parse.Object.extend('Products');	
 
 //angular stuff
-var myApp = angular.module('myApp', ['ui.router']);
+var myApp = angular.module('myApp', ['ui.router', 'firebase']);
+
+
 
 //ui config
-myApp.config(function($stateProvider) {
+myApp.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
 	.state('home', {
 		url:'/',
@@ -28,7 +29,7 @@ myApp.config(function($stateProvider) {
 	.state('charity', {
 		url: '/charity',
 		templateUrl: 'fragments/charity.html',
-		//controller: 'charityController'
+		controller: 'charityController'
 	})
 	.state('contact', {
 		url: '/contact',
@@ -40,10 +41,13 @@ myApp.config(function($stateProvider) {
 		templateUrl: 'fragments/cart.html',
 		//controller: 'cartController'
 	});
+
+	$urlRouterProvider.when('', '/');
 });
 
 //home page
 myApp.controller('homeController', function($scope, $http) {
+	$scope.selectedTab = 1;
 	$scope.products = [];
 	var query = new Parse.Query(Products);
 	query.find({
@@ -57,11 +61,12 @@ myApp.controller('homeController', function($scope, $http) {
 					region: object.get('region'),
 					charity: object.get('charity'),
 					image: object.get('image'),
-					user: object.get('user')
+					user: object.get('user'),
+					id: object.id
 				}
 				$scope.products.push(product);
+				$scope.$apply();
 			}
-			console.log($scope.products);
 		}
 	})
 });
@@ -82,6 +87,7 @@ myApp.controller('sellController', function($scope, $http) {
 		product.set('region', $scope.region);
 		product.set('charity', $scope.charity);
 		product.set('image', $scope.image);
+		product.set('description', $scope.description);
 		product.set('user', Parse.User.current().getUsername());
 		$scope.name = '';
 		$scope.price = '';
@@ -97,7 +103,19 @@ myApp.controller('sellController', function($scope, $http) {
 			}
 		})
 	}
+	$('#activateForm').click(function() {
+		$(this).hide();
+		$('#sellForm').removeClass('hide');
+	}); 
 });
+
+
+myApp.controller('charityController', function($scope, $firebaseArray){
+  var ref = new Firebase("https://charitylist.firebaseio.com/");
+  var projRef = ref.child("projects");
+  $scope.projects = $firebaseArray(projRef);
+})
+
 
 //logout current user
 var logOutUser = function() {
@@ -144,7 +162,7 @@ $(function() {
 		var user = new Parse.User();
 		user.set("username", form.find('#user').val());
 		user.set("password", form.find('#pass').val());
-		user.set("products", []);
+		user.set("cart", []);
 		user.signUp(null, {
 			success: function(user) {
 				console.log('signed up');

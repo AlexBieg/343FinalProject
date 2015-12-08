@@ -1,51 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
- 		<meta charset="utf-8">
-	  	<meta name="viewport" content="width=device-width, initial-scale=1">
-	  	<title>Relive</title>
-	 	<link rel="shortcut icon" href="shake1.png">	
-	</head>
-	<body>
-	<!-- Nav tabs -->
-		<ul class="nav nav-tabs" role="tablist">
-			<li role="presentation" class="active"><a href="#featured" aria-controls="home" role="tab" data-toggle="tab">Featured</a></li>
-			<li role="presentation"><a href="#newest" aria-controls="profile" role="tab" data-toggle="tab">Newest</a></li>
-			<li role="presentation"><a href="#distance" aria-controls="messages" role="tab" data-toggle="tab">Distance</a></li>
-			<li role="presentation" class="dropdown">
-				<a aria-expanded="false" href="#price" id="priceDropdown" class="dropdown-toggle" data-toggle="dropdown" aria-controls="Price">
-					Price 
-					<span class="caret"></span>
-				</a>
-				<ul class="dropdown-menu" aria-labelledby="priceDropdown" id="price-contents">
-					<li><a href="#lowHigh" aria-controls="lowHigh" role="tab" data-toggle="tab">Low to High</a></li>
-					<li><a href="#highLow" aria-controls="highLow" role="tab" data-toggle="tab">High to Low</a></li>
-				</ul>
-			</li>
+<!-- Nav tabs -->
+<ul class="nav nav-tabs" role="tablist">
+	<li role="presentation" class="active"><a href="#featured" aria-controls="home" role="tab" data-toggle="tab">Featured</a></li>
+	<li role="presentation"><a href="#newest" aria-controls="profile" role="tab" data-toggle="tab">Newest</a></li>
+	<li role="presentation"><a href="#distance" aria-controls="messages" role="tab" data-toggle="tab">Distance</a></li>
+	<li role="presentation" class="dropdown">
+		<a aria-expanded="false" href="#price" id="priceDropdown" class="dropdown-toggle" data-toggle="dropdown" aria-controls="Price">
+			Price 
+			<span class="caret"></span>
+		</a>
+		<ul class="dropdown-menu" aria-labelledby="priceDropdown" id="price-contents">
+			<li><a href="#lowHigh" aria-controls="lowHigh" role="tab" data-toggle="tab">Low to High</a></li>
+			<li><a href="#highLow" aria-controls="highLow" role="tab" data-toggle="tab">High to Low</a></li>
 		</ul>
+	</li>
+</ul>
 
-		  <!-- Tab panes -->
-		<div class="tab-content">
-			<div role="tabpanel" class="tab-pane active" id="featured">
-				<div class="row">
-				  <div ng-repeat="product in products" class="col-sm-6 col-md-4">
-				    <div class="thumbnail">
-				      <img src="{{product.image}}" alt="{{product.name}}">
-				      <div class="caption">
-				        <h3>{{product.name}}</h3>
-				        <p>{{product.charity}}</p>
-				        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-				      </div>
-				    </div>
-				  </div>
-				</div>
-
-			</div>
-
-
-			<div role="tabpanel" class="tab-pane" id="newest">Newest</div>
-			<div role="tabpanel" class="tab-pane" id="distance">Distance</div>
-			<div role="tabpanel" class="tab-pane" id="lowHigh">Low to High</div>
-			<div role="tabpanel" class="tab-pane" id="highLow">High to Low</div>
+  <!-- Tab panes -->
+<div class="tab-content">
+	<div role="tabpanel" class="tab-pane active" id="featured">
+		<div class="row">
+		  <div ng-repeat="product in products" class="col-sm-6 col-md-4">
+		    <div class="thumbnail">
+		      <img src="{{product.image}}" alt="{{product.name}}">
+		      <div class="caption">
+		        <h3>{{product.name}}</h3>
+		        <p>{{product.charity}}</p>
+		        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+		      </div>
+		    </div>
+		  </div>
 		</div>
-	</body>
+
+	</div>
+
+
+	<div role="tabpanel" class="tab-pane" id="newest">Newest</div>
+	<div role="tabpanel" class="tab-pane" id="distance">Distance</div>
+	<div role="tabpanel" class="tab-pane" id="lowHigh">Low to High</div>
+	<div role="tabpanel" class="tab-pane" id="highLow">High to Low</div>
+</div>
+
+  <!-- Tab panes -->
+<div class="tab-content">
+	<div role="tabpanel" class="tab-pane" ng-class="{active: selectedTab == 1}" id="featured">
+		<div class="row">
+			<div ng-repeat="product in products" class="col-sm-6 col-md-4">
+				<div class="thumbnail" id="{{product.id}}">
+					<img src="{{product.image}}" alt="{{product.name}}">
+					<div class="caption">
+						<h3>{{product.name}}</h3>
+						<p>{{product.charity}}</p>
+						<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div role="tabpanel" class="tab-pane" ng-class="{active: selectedTab == 2}" id="newest">Newest</div>
+	<div role="tabpanel" class="tab-pane" ng-class="{active: selectedTab == 3}" id="distance">Distance</div>
+	<div role="tabpanel" class="tab-pane" ng-class="{active: selectedTab == 4}" id="lowHigh">Low to High</div>
+	<div role="tabpanel" class="tab-pane" ng-class="{active: selectedTab == 5}" id="highLow">High to Low</div>
+</div>
