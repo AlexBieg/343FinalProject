@@ -39,29 +39,3 @@
 	<div role="tabpanel" class="tab-pane" id="lowHigh">Low to High</div>
 	<div role="tabpanel" class="tab-pane" id="highLow">High to Low</div>
 </div>
-
-  <!-- Tab panes -->
-<div class="tab-content">
-	<div role="tabpanel" class="tab-pane" ng-class="{active: selectedTab == 1}" id="featured">
-		<div class="row">
-			<div ng-repeat="product in products" class="col-sm-6 col-md-4">
-				<div class="thumbnail" id="{{product.id}}">
-					<a href="">
-						<img src="{{product.image}}" alt="{{product.name}}">
-					</a>
-					<div class="caption">
-						<a href="goToProductPage()"><h3>{{product.name}}</h3></a>
-						<p>{{product.charity}}</p>
-						<p><a href="#" class="btn btn-primary" role="button">Add to Cart</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-	<div role="tabpanel" class="tab-pane" ng-class="{active: selectedTab == 2}" id="newest">Newest</div>
-	<div role="tabpanel" class="tab-pane" ng-class="{active: selectedTab == 3}" id="distance">Distance</div>
-	<div role="tabpanel" class="tab-pane" ng-class="{active: selectedTab == 4}" id="lowHigh">Low to High</div>
-	<div role="tabpanel" class="tab-pane" ng-class="{active: selectedTab == 5}" id="highLow">High to Low</div>
-</div>
