@@ -32,8 +32,15 @@ li{
 }
 
 .glyphicon-shopping-cart{
-	width: 20px;
-	height: 20px;
+	font-size: 35px;
+	line-height: 50px;
+	cursor: pointer;
+	margin-right: 20px;
+}
+
+.welcome {
+	line-height: 50px;
+	padding-right: 10px;
 }
 
 /*
@@ -43,16 +50,6 @@ Header
 	color: red;
 	text-align: center;
 	font-weight: bold;
-}
-
-.glyphicon-shopping-cart {
-	font-size: 35px;
-	line-height: 50px;
-}
-
-#cartButton {
-	cursor: pointer;
-	margin-right: 20px;
 }
 
 /****** LOGIN MODAL ******/
