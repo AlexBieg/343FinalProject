@@ -63,6 +63,29 @@ myApp.controller('homeController', function($scope, $http) {
 				$scope.$apply();
 			}
 		}
+	});
+
+	$scope.productsByDate = [];
+	var query = new Parse.Query(Products);
+	query.ascending("createdAt");
+	query.find({
+		success: function (results) {
+			console.log(results);
+			for (var i = 0; i < results.length; i++) {
+				var object = results[i];
+				var product = {
+					name: object.get('name'),
+					price: object.get('price'),
+					region: object.get('region'),
+					charity: object.get('charity'),
+					image: object.get('image'),
+					user: object.get('user'),
+					id: object.id
+				}
+				$scope.productsByDate.push(product);
+				$scope.$apply();
+			}
+		}
 	})
 
 	$scope.showIfLogged = function() {
@@ -78,6 +101,7 @@ myApp.controller('homeController', function($scope, $http) {
 //cart controller
 myApp.controller('cartController', function($scope) {
 	if (Parse.User.current() != null) {
+		$scope.total = 0;
 		var items = [];
 		Parse.User.current().fetch({
 			success: function(user) {
@@ -99,6 +123,7 @@ myApp.controller('cartController', function($scope) {
 								id: object.id,
 								description: object.get('description')
 							}
+							$scope.total  += item.price;
 							$scope.products.push(item);
 							$scope.$apply();
 						},
@@ -118,6 +143,33 @@ myApp.controller('cartController', function($scope) {
 	$scope.removeFromCart = function(id) {
 		removeFromCart(id);
 	}
+
+	//checkout code copied
+	var handler = StripeCheckout.configure({
+	    key: 'pk_test_6H6kHbbnpYnhshDXaXRsff5x',
+	    image: '/img/documentation/checkout/marketplace.png',
+	    locale: 'auto',
+	    token: function(token) {
+	      // Use the token to create the charge with a server-side script.
+	      // You can access the token ID with `token.id`
+	    }
+	  });
+
+	  $('#customButton').on('click', function(e) {
+	  	console.log('hello')
+	    // Open Checkout with further options
+	    handler.open({
+	      name: 'Stripe.com',
+	      description: '2 widgets',
+	      amount: $scope.total * 100
+	    });
+	    e.preventDefault();
+	  });
+
+	  // Close Checkout on page navigation
+	  $(window).on('popstate', function() {
+	    handler.close();
+	  });
 });
 
 //sell controller
@@ -127,10 +179,51 @@ myApp.controller('sellController', function($scope, $http) {
 		$scope.$apply();
 	});
 
+
 	console.log('checking user')
 	if (Parse.User.current() != null) {
 		$('.login-message').hide();
 		$('.logged-in').removeClass('hide');
+
+		var username = Parse.User.current().getUsername();
+
+		$scope.products = [];
+		var query = new Parse.Query(Products);
+		query.equalTo("user", username);
+		query.find({
+			success: function(results) {
+				console.log(results);
+				for(var i = 0; i < results.length; i++) {
+					console.log("loop");
+					var object = results[i];
+					var item = {
+						name: object.get('name'),
+						price: object.get('price'),
+						region: object.get('region'),
+						charity: object.get('charity'),
+						image: object.get('image'),
+						user: object.get('user'),
+						id: object.id,
+						description: object.get('description')
+					}
+					$scope.products.push(item);
+					$scope.$apply();
+				}
+			}
+		})
+	}
+
+	$scope.deleteItem = function(id) {
+		var query = new Parse.Query(Products);
+		query.get(id, {
+			success: function(object) {
+				object.destroy({
+					success: function() {
+						location.reload();
+					}
+				});
+			}
+		})
 	}
 
 	//adds item to parse database
@@ -143,14 +236,9 @@ myApp.controller('sellController', function($scope, $http) {
 		product.set('image', $scope.image);
 		product.set('description', $scope.description);
 		product.set('user', Parse.User.current().getUsername());
-		$scope.name = '';
-		$scope.price = '';
-		$scope.region = '';
-		$scope.charity = '';
-		$scope.image = '';
 		product.save(null, {
 			success: function() {
-				$scope.name = '';
+				location.reload();
 			},
 			error: function(product, error) {
 				console.log(error);
@@ -281,5 +369,4 @@ $(function() {
 			}
 		);
 	})
-	
 });
