@@ -19,15 +19,19 @@
 <div class="tab-content">
 	<div role="tabpanel" class="tab-pane active" id="featured">
 		<div class="row">
-		  <div ng-repeat="product in products" class="col-sm-6 col-md-4">
+		  <div ng-repeat="product in products" class="col-sm-6 col-md-3">
 		    <div class="thumbnail" id="{{product.id}}">
-		      <img src="{{product.image}}" alt="{{product.name}}">
+		      <img ng-src="{{product.image}}" alt="{{product.name}}" style="padding-left:.5em;padding-right:.5em">
 		      <div class="caption">
 		        <h3>{{product.name}}</h3>
-		        <h5>{{product.charity}}</h5>
-		        <p>
-		        	<a ng-click="addToCart(product.id)" ng-show="{{showIfLogged()}}" class="btn btn-primary" role="button" style="margin-left:5em; margin-top:1em;">Add to Cart</a> 
+		        <p style = "text-align:center;">{{product.charity}}</h5>
+		        <div style = "margin-left:auto;margin-right:auto">
+		        	<p><a ng-click="addToCart(product.id)" ng-show="{{showIfLogged()}}" class="btn btn-primary" role="button" style=";margin-top:1em;">Add to Cart</a> 
 		       		<a class="btn btn-default" role="button" style="margin-top:1em;">ReadMore</a>
+		       	</p>
+		       </div>
+		       	<p id="success" class="hide alert alert-success">
+		       		Hooray, You added it to your cart!
 		       	</p>
 		      </div>
 		    </div>

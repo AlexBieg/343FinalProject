@@ -71,37 +71,52 @@ myApp.controller('homeController', function($scope, $http) {
 
 	$scope.addToCart = function(id) {
 		addToCart(id);
+		showSuccess(id);
 	}
 });
 
 //cart controller
 myApp.controller('cartController', function($scope) {
 	if (Parse.User.current() != null) {
-		var items = Parse.User.current().get('cart');
-		$scope.products = [];
-		for(var i = 0; i < items.length; i++) {
-			var id = items[i];
-			var query = new Parse.Query(Products);
-			query.get(id, {
-				success: function(object) {
-					var item = {
-						name: object.get('name'),
-						price: object.get('price'),
-						region: object.get('region'),
-						charity: object.get('charity'),
-						image: object.get('image'),
-						user: object.get('user'),
-						id: object.id
-					}
-					$scope.products.push(item);
-					$scope.$apply();
-				},
+		var items = [];
+		Parse.User.current().fetch({
+			success: function(user) {
+				var items = user.get('cart');
+				console.log(items);
+				$scope.products = [];
+				for(var i = 0; i < items.length; i++) {
+					var id = items[i];
+					var query = new Parse.Query(Products);
+					query.get(id, {
+						success: function(object) {
+							var item = {
+								name: object.get('name'),
+								price: object.get('price'),
+								region: object.get('region'),
+								charity: object.get('charity'),
+								image: object.get('image'),
+								user: object.get('user'),
+								id: object.id,
+								description: object.get('description')
+							}
+							$scope.products.push(item);
+							$scope.$apply();
+						},
 
-				error: function(object, error) {
-					console.log(error);
+						error: function(object, error) {
+							console.log(error);
+						}
+					});
 				}
-			});
-		}
+			},
+			error: function(user, error) {
+				console.log(error);
+			}
+		});
+	}
+
+	$scope.removeFromCart = function(id) {
+		removeFromCart(id);
 	}
 });
 
@@ -151,6 +166,28 @@ myApp.controller('charityController', function($scope){
 		$scope.$apply();
 	});
 });
+
+//remove one of the given item id from the current users cart.
+var removeFromCart = function(id) {
+	var cart = Parse.User.current().get('cart');
+	var newCart = [];
+	var notFound = true;
+	for (var i = 0; i < cart.length && notFound; i++) {
+		if (cart[i] == id) {
+			newCart = $.grep(cart, function(n, index) {
+				return (index != i);
+			});
+			notFound = false;
+		}
+	}
+	Parse.User.current().set('cart', newCart);
+	Parse.User.current().save();
+	location.reload(true);
+}
+
+var showSuccess = function(id) {
+	$("#" + id).find('#success').removeClass('hide');
+}
 
 var addToCart = function(id) {
 	var cart = Parse.User.current().get('cart');

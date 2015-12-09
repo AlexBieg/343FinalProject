@@ -4,13 +4,20 @@
 		<div class="clearfix" ng-if="$index % 3 == 0"></div>
         <div class="col-sm-4">
 			<div class="thumbnail" id="images">
-				<h5><a  target="_blank" href='{{charity.link}}' id = "charity-list">{{charity.title}}</a></h5>
+				<h5><a target="_blank" href='{{charity.link}}' id = "charity-list">{{charity.title}}</a></h5>
 				<br>
-				<h5><a class="title" target="_blank" href="{{charity.link}}"></h5>
+				<h5><a class="title" target="_blank" href="{{charity.link}}"></a></h5>
 				<img ng-src="{{charity.image}}" class="charity-img" style = "margin-top:1em"></img> 
-				</a>
 				<p id="descript" title="{{charity.description}}" style = "font-size:1em; font-family: 'Roboto', sans-serif; margin-top:1em; margin-left:2em;">{{charity.description}}</p>
 			</div>
+		<div id="images" class="well well-bg">
+			<a  target="_blank" href='{{charity.link}}'>{{charity.title}}</a>
+			<br>
+			<a class="title" target="_blank" href="{{charity.link}}">
+			<img ng-src="{{charity.image}}" class="charity-img">
+			</a>
+			<p id="descript" title="{{charity.description}}">{{charity.description}}</p>
+		</div>
 		</div>
 		</div>		
 	</div>

@@ -17,6 +17,10 @@ Custom id and classes
 	display: none;
 }
 
+#cart-header {
+	margin-bottom: 10px;
+}
+
 
 /* 
 Nav
@@ -48,7 +52,8 @@ Charity Page
 */
 
 #charity-list{
-	font-size: 1.5em;
+	font-size: 18px;
+	font-family: 'Roboto', sans-serif;
 }
 
 /*
@@ -68,7 +73,7 @@ Home
 	padding-top: 15px;
 	margin-top:15px;
 	padding bottom:15px;
-	margin-left: 15px;
+	margin-left: 0px;
 }
 
 h3{
@@ -80,6 +85,43 @@ h5{
 	text-align:center;
 }
 
+#menu{
+	display:inline-block;
+}
+
+.navbar-search{
+	border-radius: 10px;
+}
+
+.btn {
+	font-family: 'Roboto', sans-serif;
+	font-size: 1em;
+	padding:0.2em 0.2em;
+	text-align: right;
+	border-radius:10px;
+	margin-left: 4em;
+	padding-left: .8em;
+	padding-right: .8em;
+	vertical-align: bottom;
+}
+
+.btn:hover {
+    color:#E36C6C;
+}
+
+a{
+	color:black;
+}
+
+a:hover { 
+    color:black;
+}
+
+footer{
+	padding:0px 0px;
+	clear:both;
+	border-top: 1px solid #eee;
+}
 
 /****** LOGIN MODAL ******/
 .loginmodal-container {
@@ -231,7 +273,7 @@ h1{
 
 p{
 	font-family: 'Roboto', sans-serif;
-	font-size: 1.2em;
+	font-size: 12px;
 	margin-right:1.8em;
 }
 
@@ -243,23 +285,32 @@ p{
 	font-style: italic;
 	margin-top: .3em;
 	font-size: .8em;
-	color:#857E7E;
 }
 
 h4{
 	display:inline-block;
 	font-family: 'Roboto', sans-serif;
-	font-size: 1.2em;
+	font-size: 12px;
 	margin-left: 1em;
 
 }
 /** Charity images **/
 #images img {
-	max-height:200px;
-	padding:10px;
+	height:200px;
+	width:200px;
+  padding:10px;
 }
 
 /****SELL PAGE****/
 #sellForm input, #sellForm textarea {
 	margin-bottom: 10px;
 }
+
+
+/**home
+@media only screen and (max-width: 500px) {
+    body {
+        background-color: lightblue;
+    }
+}
+**?
