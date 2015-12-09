@@ -4,7 +4,7 @@
 	<div class="charity" ng-repeat="charity in charities">
 		<div class="clearfix" ng-if="$index % 3 == 0"></div>
         <div class="col-sm-4">
-		<div id="images">
+		<div id="images" class="well well-bg">
 			<a  target="_blank" href='{{charity.link}}'>{{charity.title}}</a>
 			<br>
 			<a class="title" target="_blank" href="{{charity.link}}">
