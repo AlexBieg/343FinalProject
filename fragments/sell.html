@@ -1,6 +1,6 @@
-<div class="logged-in hide" id="sellDiv">
+<div class="logged-in hide" id="sellDiv" ng-controller='sellController'>
 	<button id="activateForm" class="btn btn-primary">Sell a Product</button>
-	<div ng-controller='sellController' class="hide" id="sellForm">	
+	<div  class="hide" id="sellForm">	
 		<form name="addItemForm" ng-submit="addItem()" novalidate>
 
 			<label for="name">Product Name: </label>
@@ -25,6 +25,25 @@
 
 			<button ng-disabled="addItemForm.$invalid" id="add-product" type="submit" class="btn btn-primary">Add Product</button>
 		</form>
+	</div>
+	<div id="selling">
+		<h2>What You Are Selling</h2>
+		<div ng-repeat="product in products" class="col-sm-6 col-md-4">
+		  <div class="thumbnail" id="{{product.id}}">
+		    <img ng-src="{{product.image}}" alt="{{product.name}}">
+		    <div class="caption">
+		      <h3>{{product.name}}</h3>
+		      <p>{{product.charity}}</p>
+		      <p>
+		      	<button ng-click="deleteItem(product.id)" class="btn btn-danger">Delete Item</button> 
+		     	<a class="btn btn-default" role="button">ReadMore</a>
+		      </p>
+		     	<p id="success" class="hide alert alert-success">
+		     		Hooray, You added it to your cart!
+		     	</p>
+		    </div>
+		  </div>
+		</div>
 	</div>
 </div>
 <div class="login-message">
