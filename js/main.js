@@ -65,29 +65,6 @@ myApp.controller('homeController', function($scope, $http) {
 		}
 	});
 
-	$scope.productsByDate = [];
-	var query = new Parse.Query(Products);
-	query.ascending("createdAt");
-	query.find({
-		success: function (results) {
-			console.log(results);
-			for (var i = 0; i < results.length; i++) {
-				var object = results[i];
-				var product = {
-					name: object.get('name'),
-					price: object.get('price'),
-					region: object.get('region'),
-					charity: object.get('charity'),
-					image: object.get('image'),
-					user: object.get('user'),
-					id: object.id
-				}
-				$scope.productsByDate.push(product);
-				$scope.$apply();
-			}
-		}
-	})
-
 	$scope.showIfLogged = function() {
 		return isLogged();
 	}
@@ -96,6 +73,8 @@ myApp.controller('homeController', function($scope, $http) {
 		addToCart(id);
 		showSuccess(id);
 	}
+
+	$scope.sortType = 'name'
 });
 
 //cart controller
