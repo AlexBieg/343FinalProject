@@ -101,6 +101,7 @@ myApp.controller('homeController', function($scope, $http) {
 //cart controller
 myApp.controller('cartController', function($scope) {
 	if (Parse.User.current() != null) {
+		$scope.total = 0;
 		var items = [];
 		Parse.User.current().fetch({
 			success: function(user) {
@@ -122,6 +123,7 @@ myApp.controller('cartController', function($scope) {
 								id: object.id,
 								description: object.get('description')
 							}
+							$scope.total  += item.price;
 							$scope.products.push(item);
 							$scope.$apply();
 						},
