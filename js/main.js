@@ -305,25 +305,8 @@ var logOutUser = function() {
 //chek if a user is logged in and show correct info
 var checkLogged = function() {
 	if(Parse.User.current() != null) {
-		$('#loginButton').hide();
-
-		var logOut = $("<button>Log Out</button>");
-		logOut.addClass("btn");
-		logOut.addClass("btn-primary");
-		logOut.addClass("logOutButton");
-		logOut.click(function() {
-			logOutUser();
-		})
-
-		var hello = $("<span>");
-		hello.addClass("welcome");
-		hello.html('Welcome back ' + Parse.User.current().getUsername() + "!")
-
-		var li = $("<li>");
-		li.html(hello);
-		li.append(logOut);
-
-		$('#loginList').append(li)
+		$("#logOutButton").removeClass("hide");
+		$('#signUpButton').addClass('hide');
 	}
 }
 
@@ -336,6 +319,10 @@ $(function() {
 	$('.dropdown-toggle').dropdown();
 
 	checkLogged();
+
+	$('#logOutButton').click(function() {
+		logOutUser();
+	})
 
 	$('#sign-up-button').click(function() {
 		var form = $(this).parent();
