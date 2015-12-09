@@ -122,6 +122,11 @@ myApp.controller('cartController', function($scope) {
 
 //sell controller
 myApp.controller('sellController', function($scope, $http) {
+	$.getJSON("charity-list.json", function(results) {
+		$scope.charities = results.charities;
+		$scope.$apply();
+	});
+
 	console.log('checking user')
 	if (Parse.User.current() != null) {
 		$('.login-message').hide();

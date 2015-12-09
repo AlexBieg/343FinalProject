@@ -1,21 +1,21 @@
 <div class="logged-in hide" id="sellDiv">
 	<button id="activateForm" class="btn btn-primary">Sell a Product</button>
 	<div ng-controller='sellController' class="hide" id="sellForm">	
-		<form name="addItemForm" ng-submit="addItem()">
+		<form name="addItemForm" ng-submit="addItem()" novalidate>
 
 			<label for="name">Product Name: </label>
 			<input ng-model="name" id="name" type="text" class="form-control" ng-required="true" name="name">
-			<div class="alert alert-warning" ng-show="addItemForm.name.$error.required" role="alert">Missing Name</div>
+			<div class="alert alert-warning" ng-show="addItemForm.name.$touched && addItemForm.name.$error.required" role="alert">Missing Name</div>
 
 			<label for="price">Price: </label>
 			<input ng-model="price" id="price" name="price" type="number" step="0.01" class="form-control" ng-pattern="/^[+-]?[0-9]{1,3}(?:,?[0-9]{3})*(?:\.[0-9]{2})?$/" required>
-			<div class="alert alert-warning" ng-show="!addItemForm.price.$error.pattern" role="alert">Invalid Price</div>
+			<div class="alert alert-warning" ng-show="(addItemForm.price.$touched && addItemForm.price.$error.required) || addItemForm.price.$error.pattern" role="alert">Invalid Price</div>
 
-			<label for="region">Region: </label>
-			<input ng-model="region" id="region" type="text" class="form-control">
-
-			<label for="charity">Charity: </label>
-			<input ng-model="charity" id="charity" type="text" class="form-control"> 
+			<label for="charity">Charity: (Don't see your charity? <a href="mailto:someone@example.com?Subject=Hello%20again" target="_top">Contact Us</a>)</label>
+			<select ng-required="true" ng-model="charity" id="charity" class="form-control">
+				<option ng-repeat="charity in charities">{{charity.title}}</option>
+			</select>
+			<div class="alert alert-warning" ng-show="(addItemForm.charity.$touched && addItemForm.charity.$error.required)" role="alert">You must choose a charity</div>
 
 			<label for="picture">Image URL: </label>
 			<input ng-model="image" type="text" id="picture" class="form-control">
@@ -23,7 +23,7 @@
 			<label for="description">Product Description: </label>
 			<textarea ng-model="description" id="description" class="form-control" rows="5"></textarea>
 
-			<button id="add-product" type="submit" class="btn btn-primary">Add Product</button>
+			<button ng-disabled="addItemForm.$invalid" id="add-product" type="submit" class="btn btn-primary">Add Product</button>
 		</form>
 	</div>
 </div>
