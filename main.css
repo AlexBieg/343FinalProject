@@ -239,3 +239,7 @@ h4{
 #sellForm input, #sellForm textarea {
 	margin-bottom: 10px;
 }
+
+#charge {
+  display:block;
+}
