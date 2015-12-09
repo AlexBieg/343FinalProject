@@ -44,6 +44,14 @@ li{
 }
 
 /*
+Charity Page
+*/
+
+#charity-list{
+	font-size: 1.5em;
+}
+
+/*
 Header
 */
 .error {
@@ -51,6 +59,27 @@ Header
 	text-align: center;
 	font-weight: bold;
 }
+
+/*
+Home
+*/
+
+.thumbnail{
+	padding-top: 15px;
+	margin-top:15px;
+	padding bottom:15px;
+	margin-left: 15px;
+}
+
+h3{
+	margin-top: 15px;
+	text-align: center;
+}
+
+h5{
+	text-align:center;
+}
+
 
 /****** LOGIN MODAL ******/
 .loginmodal-container {
