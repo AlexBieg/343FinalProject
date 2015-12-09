@@ -47,14 +47,6 @@ li{
 	padding-right: 10px;
 }
 
-/*
-Charity Page
-*/
-
-#charity-list{
-	font-size: 18px;
-	font-family: 'Roboto', sans-serif;
-}
 
 /*
 Header
@@ -220,18 +212,6 @@ footer{
 .login-help{
 	font-size: 12px;
 }
-#featCharity img, #featCharityInfo {
-	float: left;
-}
-
-#featCharityInfo {
-	padding-left: 20px;
-}
-
-#featCharityBannerInfo {
-	margin-top: 20px;
-	margin-bottom: 50px;
-}
 
 hr {
 	border: 0;
@@ -294,13 +274,26 @@ h4{
 	margin-left: 1em;
 
 }
-/** Charity images **/
+/** Charity PAGE **/
 #images img {
 	height:200px;
 	width:200px;
   padding:10px;
 }
+#descript{
+  font-size:1em;
+  font-family: 'Roboto'
+  sans-serif;
+  margin-top:1em; 
+  margin-left:2em;
+}
+.charity-img {
+  margin-bottom:1em;
+}
 
+.well {
+  background-color: white;
+}
 /****SELL PAGE****/
 #sellForm input, #sellForm textarea {
 	margin-bottom: 10px;
