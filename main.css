@@ -25,6 +25,13 @@ Custom id and classes
 /* 
 Nav
 */
+#icon{
+	width:5em; 
+	height:5em;
+	margin-top: -2em;
+	margin-left: -1em;
+	margin-right: -2em;
+}
 
 h2{
 	font-family: 'Fjalla One', sans-serif;
@@ -45,6 +52,52 @@ li{
 .welcome {
 	line-height: 50px;
 	padding-right: 10px;
+}
+
+#inline-block{
+	display:inline-block;
+}
+
+#home{
+	margin-left:-2em;
+	margin-right:3em;
+}
+
+#others{
+	margin-left:.5em;
+	margin-right:3em; 
+	margin-bottom:-.5em;
+}
+
+#search-form{
+	display: inline-block; 
+	margin-left: -3em;
+}
+
+#search-input{
+	margin-left:1em;
+	height:1.5em; 
+	width:8em; 
+	border-radius:10px; 
+	font-family: 'Roboto', sans-serif;
+}
+
+#mglass{
+	width:1.5em; 
+	height:1.5em; 
+	margin-left:.5em; 
+	margin-right:1em;
+}
+
+#sign-up-bottom{
+	margin-bottom:-.65em;
+}
+
+#cartButton{
+	width:1.8em; 
+	height:1.8em;
+	margin-left:1em; 
+	margin-right:-1em
 }
 
 /*
@@ -69,11 +122,27 @@ Header
 Home
 */
 
+#product-image {
+	padding-left:.5em;
+	padding-right:.5em;
+}
+
+
 .thumbnail{
 	padding-top: 15px;
 	margin-top:15px;
 	padding bottom:15px;
 	margin-left: 0px;
+}
+
+#action1{
+	margin-top: 1em;
+}
+
+#action2{
+	padding-left: 1em;
+	padding-right: 1em;
+	margin-top: 1em;
 }
 
 h3{
