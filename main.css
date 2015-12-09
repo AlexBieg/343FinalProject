@@ -17,6 +17,10 @@ Custom id and classes
 	display: none;
 }
 
+#cart-header {
+	margin-bottom: 10px;
+}
+
 
 /* 
 Nav

@@ -96,7 +96,8 @@ myApp.controller('cartController', function($scope) {
 								charity: object.get('charity'),
 								image: object.get('image'),
 								user: object.get('user'),
-								id: object.id
+								id: object.id,
+								description: object.get('description')
 							}
 							$scope.products.push(item);
 							$scope.$apply();
