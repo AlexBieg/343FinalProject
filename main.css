@@ -195,7 +195,7 @@ h5{
 .btn {
 	font-family: 'Roboto', sans-serif;
 	font-size: 1em;
-	padding:0.2em 0.2em;
+	padding:0.2em;
 	text-align: right;
 	border-radius:10px;
 	margin-left: 4em;
@@ -415,14 +415,18 @@ h4{
 .charity-img {
   margin-bottom:1em;
 }
-.btn {
-margin-right:10px;
-}
 
 .well {
   background-color: white;
 }
+
 /****SELL PAGE****/
 #sellForm input, #sellForm textarea, #sellForm select {
 	margin-bottom: 15px;
+}
+
+#add-product {
+	margin-top: 10px;
+	margin-left: 0;
+	margin-bottom: 10px;
 }
