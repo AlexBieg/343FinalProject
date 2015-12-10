@@ -128,7 +128,7 @@ myApp.controller('cartController', function($scope) {
 	//checkout code copied
 	var handler = StripeCheckout.configure({
 	    key: 'pk_test_6H6kHbbnpYnhshDXaXRsff5x',
-	    image: '/img/documentation/checkout/marketplace.png',
+	    image: 'img/shake1.png',
 	    locale: 'auto',
 	    token: function(token) {
 	      // Use the token to create the charge with a server-side script.
@@ -140,8 +140,7 @@ myApp.controller('cartController', function($scope) {
 	  	console.log('hello')
 	    // Open Checkout with further options
 	    handler.open({
-	      name: 'Stripe.com',
-	      description: '2 widgets',
+	      name: 'Payment Information',
 	      amount: $scope.total * 100
 	    });
 	    e.preventDefault();
