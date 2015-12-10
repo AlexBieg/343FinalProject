@@ -118,6 +118,10 @@ Header
 	font-weight: bold;
 }
 
+footer p {
+	margin-top:2em;
+}
+
 /*
 Home
 */
