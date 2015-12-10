@@ -25,7 +25,7 @@
 			<button ng-click="addItem()" ng-disabled="addItemForm.$invalid" id="add-product" type="submit" class="btn btn-primary">Add Product</button>
 		</form>
 	</div>
-	<div id="selling">
+	<div id="selling" class="row">
 		<h2>What You Are Selling</h2>
 		<div ng-repeat="product in products" class="col-sm-6 col-md-4">
 		  <div class="thumbnail" id="{{product.id}}">

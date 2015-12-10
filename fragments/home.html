@@ -14,7 +14,7 @@
 </div>
 
 <div class="row">
-	<div ng-repeat="product in products | orderBy:sortBy | filter:searchValue" class="col-sm-6 col-md-3">
+	<div ng-repeat="product in products | orderBy:sortBy | filter:searchValue" class="col-sm-6 col-md-3 product">
 		<div class="thumbnail" id="{{product.id}}">
 			<img ng-src="{{product.image}}" alt="{{product.name}}" id="product">
 			<div class="caption">
