@@ -71,7 +71,8 @@ li{
 
 #search-form{
 	display: inline-block; 
-	margin-left: -3em;
+	margin-left: 1em;
+	margin-bottom:.2em;
 }
 
 #search-input{
