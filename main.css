@@ -22,7 +22,7 @@ Custom id and classes
 }
 
 .product {
-  height: 480px;
+  min-height: 600px;
 }
 
 
