@@ -25,6 +25,11 @@ Custom id and classes
   min-height: 600px;
 }
 
+#tot-items {
+  margin-left: 10px;
+  font-size: 20px;
+}
+
 
 /* 
 Nav
@@ -51,11 +56,6 @@ li{
 	line-height: 50px;
 	cursor: pointer;
 	margin-right: 20px;
-}
-
-.welcome {
-	line-height: 50px;
-	padding-right: 10px;
 }
 
 #inline-block{
@@ -145,6 +145,7 @@ Header
 
 footer p {
 	margin-top:2em;
+	margin-left: 0px;
 }
 
 /*
@@ -407,9 +408,8 @@ h4{
 }
 /** Charity PAGE **/
 #images img {
-	height:200px;
-	width:200px;
-  padding:10px;
+	width:20em;
+  	padding:10px;
 }
 
 .charity-img {

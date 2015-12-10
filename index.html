@@ -42,11 +42,11 @@
 	  		</div>		
 			<div class="page-header">
   				<ul>
-  					<div class="row">
+  					<div class="row" ng-controller="cartNumController">
 	  					<div class="col-sm-2" id = "inline-block">
 	  						<img src = "img/shake1.png" id="icon"></img>	
 	  					</div>
-	  					<div class="col-sm-5" id = "inline-block">
+	  					<div class="col-sm-7" id = "inline-block">
 							<li><a href="#/" id = "home" class="headerLink">Home</a></li>
 							<li><a href="#sell" class = "others headerLink">Sell</a></li>
 						    <li><a href="#charity" class = "others headerLink">Charities</a></li>
@@ -61,6 +61,7 @@
 					    	</li>
 					    	<a href="#cart">
 					    		<li><img href="#cart" src="img/cart.png" id="cartButton"></li>
+					    		<li id="tot-items"><span>{{totItems}}</span></li>
 					    	<a>
 				    	</div>
 			    	</div>	
