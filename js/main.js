@@ -19,12 +19,12 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 	.state('sell', {
 		url:'/sell',
 		templateUrl: 'fragments/sell.html',
-		//controller: 'sellController',
+		controller: 'sellController',
 	})
 	.state('about', {
 		url: '/about',
 		templateUrl: 'fragments/about.html',
-		//controller: 'aboutController'
+		controller: 'aboutController'
 	})
 	.state('charity', {
 		url: '/charity',
