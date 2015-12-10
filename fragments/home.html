@@ -20,7 +20,8 @@
 				<p style = "text-align:center;">{{product.charity}}</h5>
 				<div id="addToCart">
 					<p><a ng-click="addToCart(product.id)" ng-show="{{showIfLogged()}}" class="btn btn-primary" role="button" id="addLink">Add to Cart</a> 
-						<a class="btn btn-default" role="button" id="readMore">ReadMore</a>
+						<a class="btn btn-default" role="button" id="readMore" data-toggle="collapse" data-target="#{{product.id}}1">ReadMore</a>
+						<p class="collapse" id="{{product.id}}1">{{product.description}}</p>
 					</p>
 				</div>
 				<p id="success" class="hide alert alert-success">

@@ -16,6 +16,8 @@
 	      <p>{{product.charity}}</p>
 	      <p>
 	      	<a ng-click="removeFromCart(product.id)"class="btn btn-primary" role="button">Remove from Cart</a>
+	      	<a class="btn btn-default" role="button" id="readMore" data-toggle="collapse" data-target="#{{product.id}}1">ReadMore</a>
+	      	<p class="collapse" id="{{product.id}}1">{{product.description}}</p>
 	     	</p>
 	     	<p id="success" class="hide alert alert-success">
 	     		You removed it from your cart!

@@ -58,6 +58,7 @@ myApp.controller('homeController', function($scope, $http) {
 					image: object.get('image'),
 					user: object.get('user'),
 					id: object.id,
+					description: object.get('description'),
 					added: object.get('createdAt')
 				}
 				$scope.products.push(product);
