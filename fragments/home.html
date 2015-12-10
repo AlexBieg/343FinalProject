@@ -1,12 +1,16 @@
 <div>
-	<p>Sort By: {{}}</p>
-	<a href="#" ng-click="sortBy='added'"><button class="btn btn-default xsmall sortButton">Recently Added</button></a>
-	<a href="#" ng-click="sortBy='price'"><button class="btn btn-default xsmall sortButton">Price: Low to High</button></a>
-	<a href="#" ng-click="sortBy='-price'"><button class="btn btn-default xsmall sortButton">Price: High to Low</button></a>
-	<form class="navbar-search" id="search-form">
-		<input type="text" class="form-control" id="search-input" ng-model="searchValue">	
-	</form>
-	<img src = "img/mg-b.png" id="mglass"></img>
+	<div>
+		<p>Sort By: </p>
+		<a href="#" ng-click="sortBy='added'"><button class="btn btn-default xsmall sortButton active">Recently Added</button></a>
+		<a href="#" ng-click="sortBy='price'"><button class="btn btn-default xsmall sortButton">Price: Low to High</button></a>
+		<a href="#" ng-click="sortBy='-price'"><button class="btn btn-default xsmall sortButton">Price: High to Low</button></a>
+	</div>
+	<div>
+		<form class="navbar-search" id="search-form">
+			<input type="text" class="form-control" id="search-input" ng-model="searchValue">	
+		</form>
+		<img src = "img/mg-b.png" id="mglass"></img>
+	</div>
 </div>
 
 <div class="row">

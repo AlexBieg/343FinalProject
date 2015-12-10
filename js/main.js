@@ -208,7 +208,6 @@ myApp.controller('sellController', function($scope, $http) {
 
 	//adds item to parse database
 	$scope.addItem = function() {
-		console.log('adding item');
 		var product = new Products();
 		product.set('name', $scope.name);
 		product.set('price', $scope.price);
@@ -293,12 +292,6 @@ var checkLogged = function() {
 
 //when document is finshed loading do this
 $(function() {
-	$('#myTabs a').click(function (e) {
-		e.preventDefault()
-		$(this).tab('show')
-	});
-	$('.dropdown-toggle').dropdown();
-
 	checkLogged();
 
 	$('#logOutButton').click(function() {
@@ -338,7 +331,8 @@ $(function() {
 		);
 	});
 
-	$('.sortButton').click(function() {
+	$('.sortButton').on("click", function() {
+		console.log("here");
 		$('.sortButton').removeClass('active');
 		$(this).addClass('active');
 	});
