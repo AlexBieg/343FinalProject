@@ -42,7 +42,7 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 
 //home page
 myApp.controller('homeController', function($scope, $http) {
-	$scope.selectedTab = 1;
+	$scope.sortBy = "added";
 	$scope.products = [];
 	var query = new Parse.Query(Products);
 	query.find({
@@ -57,36 +57,15 @@ myApp.controller('homeController', function($scope, $http) {
 					charity: object.get('charity'),
 					image: object.get('image'),
 					user: object.get('user'),
-					id: object.id
+					id: object.id,
+					description: object.get('description'),
+					added: object.get('createdAt')
 				}
 				$scope.products.push(product);
 				$scope.$apply();
 			}
 		}
 	});
-
-	$scope.productsByDate = [];
-	var query = new Parse.Query(Products);
-	query.ascending("createdAt");
-	query.find({
-		success: function (results) {
-			console.log(results);
-			for (var i = 0; i < results.length; i++) {
-				var object = results[i];
-				var product = {
-					name: object.get('name'),
-					price: object.get('price'),
-					region: object.get('region'),
-					charity: object.get('charity'),
-					image: object.get('image'),
-					user: object.get('user'),
-					id: object.id
-				}
-				$scope.productsByDate.push(product);
-				$scope.$apply();
-			}
-		}
-	})
 
 	$scope.showIfLogged = function() {
 		return isLogged();
@@ -96,6 +75,8 @@ myApp.controller('homeController', function($scope, $http) {
 		addToCart(id);
 		showSuccess(id);
 	}
+
+
 });
 
 //cart controller
@@ -228,6 +209,7 @@ myApp.controller('sellController', function($scope, $http) {
 
 	//adds item to parse database
 	$scope.addItem = function() {
+		console.log('adding item');
 		var product = new Products();
 		product.set('name', $scope.name);
 		product.set('price', $scope.price);
@@ -305,25 +287,8 @@ var logOutUser = function() {
 //chek if a user is logged in and show correct info
 var checkLogged = function() {
 	if(Parse.User.current() != null) {
-		$('#loginButton').hide();
-
-		var logOut = $("<button>Log Out</button>");
-		logOut.addClass("btn");
-		logOut.addClass("btn-primary");
-		logOut.addClass("logOutButton");
-		logOut.click(function() {
-			logOutUser();
-		})
-
-		var hello = $("<span>");
-		hello.addClass("welcome");
-		hello.html('Welcome back ' + Parse.User.current().getUsername() + "!")
-
-		var li = $("<li>");
-		li.html(hello);
-		li.append(logOut);
-
-		$('#loginList').append(li)
+		$("#logOutButton").removeClass("hide");
+		$('#signUpButton').addClass('hide');
 	}
 }
 
@@ -336,6 +301,10 @@ $(function() {
 	$('.dropdown-toggle').dropdown();
 
 	checkLogged();
+
+	$('#logOutButton').click(function() {
+		logOutUser();
+	})
 
 	$('#sign-up-button').click(function() {
 		var form = $(this).parent();
@@ -368,5 +337,10 @@ $(function() {
 				$('#user-error').html(error.message);
 			}
 		);
-	})
+	});
+
+	$('.sortButton').click(function() {
+		$('.sortButton').removeClass('active');
+		$(this).addClass('active');
+	});
 });
