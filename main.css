@@ -411,13 +411,7 @@ h4{
 	width:20em;
   	padding:10px;
 }
-#descript{
-  font-size:1em;
-  font-family: 'Roboto'
-  sans-serif;
-  margin-top:1em; 
-  margin-left:2em;
-}
+
 .charity-img {
   margin-bottom:1em;
 }
@@ -428,7 +422,24 @@ margin-right:10px;
 .well {
   background-color: white;
 }
+
+/* Icon when the collapsible content is shown */
+.information.btn:after {
+    font-family: "Glyphicons Halflings";
+    content: "Read Less";
+}
+
+/* Icon when the collapsible content is hidden */
+.information.btn.collapsed:after {
+    content: "Read More";
+}
 /****SELL PAGE****/
+<<<<<<< HEAD
 #sellForm input, #sellForm textarea {
 	margin-bottom: 10px;
 }
+=======
+#sellForm input, #sellForm textarea, #sellForm select {
+	margin-bottom: 15px;
+}
+>>>>>>> d66d4fa03e1dbb09f2d09a18cb00f255512339bc
