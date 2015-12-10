@@ -192,6 +192,20 @@ footer{
 	border-top: 1px solid #eee;
 }
 
+#product {
+	padding-left:.5em;
+	padding-right:.5em;
+}
+
+#addToCart {
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#addLink, #readMore {
+	margin-top:1em;
+}
+
 /****** LOGIN MODAL ******/
 .loginmodal-container {
 	padding: 30px;

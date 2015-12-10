@@ -42,7 +42,7 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 
 //home page
 myApp.controller('homeController', function($scope, $http) {
-	$scope.selectedTab = 1;
+	$scope.sortBy = "added";
 	$scope.products = [];
 	var query = new Parse.Query(Products);
 	query.find({
@@ -57,36 +57,14 @@ myApp.controller('homeController', function($scope, $http) {
 					charity: object.get('charity'),
 					image: object.get('image'),
 					user: object.get('user'),
-					id: object.id
+					id: object.id,
+					added: object.get('createdAt')
 				}
 				$scope.products.push(product);
 				$scope.$apply();
 			}
 		}
 	});
-
-	$scope.productsByDate = [];
-	var query = new Parse.Query(Products);
-	query.ascending("createdAt");
-	query.find({
-		success: function (results) {
-			console.log(results);
-			for (var i = 0; i < results.length; i++) {
-				var object = results[i];
-				var product = {
-					name: object.get('name'),
-					price: object.get('price'),
-					region: object.get('region'),
-					charity: object.get('charity'),
-					image: object.get('image'),
-					user: object.get('user'),
-					id: object.id
-				}
-				$scope.productsByDate.push(product);
-				$scope.$apply();
-			}
-		}
-	})
 
 	$scope.showIfLogged = function() {
 		return isLogged();
@@ -96,6 +74,8 @@ myApp.controller('homeController', function($scope, $http) {
 		addToCart(id);
 		showSuccess(id);
 	}
+
+
 });
 
 //cart controller
@@ -355,5 +335,10 @@ $(function() {
 				$('#user-error').html(error.message);
 			}
 		);
-	})
+	});
+
+	$('.sortButton').click(function() {
+		$('.sortButton').removeClass('active');
+		$(this).addClass('active');
+	});
 });
