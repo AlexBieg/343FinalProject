@@ -35,7 +35,8 @@
 		      <p>{{product.charity}}</p>
 		      <p>
 		      	<button ng-click="deleteItem(product.id)" class="btn btn-danger">Delete Item</button> 
-		     	<a class="btn btn-default" role="button">ReadMore</a>
+		     	<a class="btn btn-default" role="button" id="readMore" data-toggle="collapse" data-target="#{{product.id}}1">ReadMore</a>
+		     	<p class="collapse" id="{{product.id}}1">{{product.description}}</p>
 		      </p>
 		     	<p id="success" class="hide alert alert-success">
 		     		Hooray, You added it to your cart!
