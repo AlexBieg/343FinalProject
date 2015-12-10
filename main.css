@@ -63,7 +63,7 @@ li{
 	margin-right:3em;
 }
 
-#others{
+.others{
 	margin-left:.5em;
 	margin-right:3em; 
 	margin-bottom:-.5em;
@@ -190,6 +190,10 @@ a:hover {
     color:black;
     text-decoration: none;
 }
+
+.headerLink:hover, #contactUs {
+	text-decoration: underline;
+	}
 
 footer{
 	padding:0px 0px;
