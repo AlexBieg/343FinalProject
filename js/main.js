@@ -332,7 +332,7 @@ $(function() {
 		);
 	});
 
-	$('.sortButton').on("click", function() {
+	$(document).on("click", '.sortButton', function() {
 		console.log("here");
 		$('.sortButton').removeClass('active');
 		$(this).addClass('active');
