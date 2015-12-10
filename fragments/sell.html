@@ -1,8 +1,7 @@
 <div class="logged-in hide" id="sellDiv" ng-controller='sellController'>
 	<button id="activateForm" class="btn btn-primary">Sell a Product</button>
 	<div  class="hide" id="sellForm">	
-		<form name="addItemForm" ng-submit="addItem()" novalidate>
-
+		<form name="addItemForm" novalidate>
 			<label for="name">Product Name: </label>
 			<input ng-model="name" id="name" type="text" class="form-control" ng-required="true" name="name">
 			<div class="alert alert-warning" ng-show="addItemForm.name.$touched && addItemForm.name.$error.required" role="alert">Missing Name</div>
@@ -23,7 +22,7 @@
 			<label for="description">Product Description: </label>
 			<textarea ng-model="description" id="description" class="form-control" rows="5"></textarea>
 
-			<button ng-disabled="addItemForm.$invalid" id="add-product" type="submit" class="btn btn-primary">Add Product</button>
+			<button ng-click="addItem()" ng-disabled="addItemForm.$invalid" id="add-product" type="submit" class="btn btn-primary">Add Product</button>
 		</form>
 	</div>
 	<div id="selling">
