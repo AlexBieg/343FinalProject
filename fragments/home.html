@@ -1,4 +1,24 @@
-<p>Sort By: </p>
-<a href="#" ng-click="sortBy='added'"><button class="btn btn-default xsmall">Recently Added</button></a>
-<a href="#" ng-click="sortBy='lowHigh'"><button class="btn btn-default xsmall">Price: Low to High</button></a>
-<a href="#" ng-click="sortBy='highLow'"><button class="btn btn-default xsmall">Price: High to Low</button></a>
+<p>Sort By: {{}}</p>
+<a href="#" ng-click="sortBy='added'"><button class="btn btn-default xsmall sortButton">Recently Added</button></a>
+<a href="#" ng-click="sortBy='price'"><button class="btn btn-default xsmall sortButton">Price: Low to High</button></a>
+<a href="#" ng-click="sortBy='-price'"><button class="btn btn-default xsmall sortButton">Price: High to Low</button></a>
+
+<div class="row">
+<div ng-repeat="product in products | orderBy:sortBy" class="col-sm-6 col-md-3">
+	<div class="thumbnail" id="{{product.id}}">
+		<img ng-src="{{product.image}}" alt="{{product.name}}" id="product">
+			<div class="caption">
+				<h3>{{product.name}}</h3>
+				<p style = "text-align:center;">{{product.charity}}</h5>
+				<div id="addToCart">
+					<p><a ng-click="addToCart(product.id)" ng-show="{{showIfLogged()}}" class="btn btn-primary" role="button" id="addLink">Add to Cart</a> 
+						<a class="btn btn-default" role="button" id="readMore">ReadMore</a>
+					</p>
+				</div>
+				<p id="success" class="hide alert alert-success">
+					Hooray, You added it to your cart!
+				</p>
+			</div>
+		</div>
+	</div>
+</div>

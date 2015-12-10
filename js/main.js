@@ -42,7 +42,7 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 
 //home page
 myApp.controller('homeController', function($scope, $http) {
-	$scope.selectedTab = 1;
+	$scope.sortBy = "added";
 	$scope.products = [];
 	var query = new Parse.Query(Products);
 	query.find({
@@ -57,7 +57,8 @@ myApp.controller('homeController', function($scope, $http) {
 					charity: object.get('charity'),
 					image: object.get('image'),
 					user: object.get('user'),
-					id: object.id
+					id: object.id,
+					added: object.get('createdAt')
 				}
 				$scope.products.push(product);
 				$scope.$apply();
@@ -74,7 +75,7 @@ myApp.controller('homeController', function($scope, $http) {
 		showSuccess(id);
 	}
 
-	$scope.sortType = 'name'
+
 });
 
 //cart controller
@@ -282,6 +283,11 @@ $(function() {
 				$('#user-error').html(error.message);
 			}
 		);
+	})
+
+	$('.sortButton').click(function() {
+		$('.sortButton').removeClass('active');
+		$(this).addClass('active');
 	})
 	
 });
