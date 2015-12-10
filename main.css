@@ -25,6 +25,11 @@ Custom id and classes
   min-height: 600px;
 }
 
+#tot-items {
+  margin-left: 10px;
+  font-size: 20px;
+}
+
 
 /* 
 Nav

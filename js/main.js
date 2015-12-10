@@ -40,6 +40,17 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 	$urlRouterProvider.when('', '/');
 });
 
+myApp.controller('cartNumController', function($scope) {
+	$scope.totItems = 0;
+	if (Parse.User.current() != null) {
+		Parse.User.current().fetch({
+			success: function(user) {		
+				$scope.totItems = user.get("cart").length;
+			}
+		});
+	}
+});
+
 //home page
 myApp.controller('homeController', function($scope, $http) {
 	$scope.sortBy = "added";
