@@ -434,6 +434,12 @@ margin-right:10px;
     content: "Read More";
 }
 /****SELL PAGE****/
+<<<<<<< HEAD
 #sellForm input, #sellForm textarea {
 	margin-bottom: 10px;
 }
+=======
+#sellForm input, #sellForm textarea, #sellForm select {
+	margin-bottom: 15px;
+}
+>>>>>>> d66d4fa03e1dbb09f2d09a18cb00f255512339bc
