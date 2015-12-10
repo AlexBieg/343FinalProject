@@ -22,7 +22,7 @@ Custom id and classes
 }
 
 .product {
-  height: 480px;
+  min-height: 600px;
 }
 
 
@@ -73,8 +73,25 @@ li{
 	margin-bottom:-.5em;
 }
 
+.sortButton, #sortBy {
+	float: left;
+}
+
+#homeDiv {
+	height: 50px;
+}
+
+#productRow {
+	clear: both;
+}
+
 #search-form{
 	display: inline-block; 
+	font-family: 'Roboto', sans-serif;
+	font-size: 10px;
+	float: right;
+	clear: right;
+
 	margin-left: -3em;
 	font-family: 'Roboto', sans-serif;
 	font-size: 10px;
@@ -403,6 +420,9 @@ h4{
 }
 .charity-img {
   margin-bottom:1em;
+}
+.btn {
+margin-right:10px;
 }
 
 .well {

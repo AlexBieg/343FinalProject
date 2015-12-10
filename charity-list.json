@@ -1,6 +1,7 @@
 {
   "charities": {
     "China":{
+      "id": "0",
       "title": "China Women's Development Foundation Introduction",
       "image": "img/china.jpg",
       "link": "http://www.womenofchina.cn/womenofchina/html1/about/7/7041-1.htm",
@@ -8,6 +9,7 @@
     },
     
     "India":{
+      "id": "1",
       "title": "Samuha",
       "image": "img/india.jpg",
       "link": "http://www.samuha.org/",
@@ -15,6 +17,7 @@
     },
     
     "Ethiopia":{
+      "id": "2",
       "title": "Save the Children Ethiopia",
       "image": "img/ethiopia.jpg",
       "link": "http://www.savethechildren.org/site/c.8rKLIXMGIpI4E/b.6150299/k.DB12/Ethiopia.htm",
@@ -23,6 +26,7 @@
     
 
     "Taiwan":{
+      "id": "3",
       "title": "Tzu Chi",
       "image": "img/taiwan.jpg",
       "link": "http://www.tzuchi.us/",
@@ -30,6 +34,7 @@
     },
     
     "South Korea":{
+      "id": "4",
       "title": "People for Successful Corean Reunification",
       "image": "img/korea.jpg",
       "link": "www.pscore.org/xe/en_home?ckattempt=1",
@@ -37,6 +42,7 @@
     },
     
     "Thailand":{
+      "id": "5",
       "title": "Animal Sanctuary",
       "image": "img/thailand.jpg",
       "link": "http://www.wildlifevolunteer.org/",
@@ -45,6 +51,7 @@
     
 
     "Syria":{
+      "id": "6",
       "title": "Karam Foundation",
       "image": "img/syria.jpg",
       "link": "http://www.karamfoundation.org/",
@@ -52,6 +59,7 @@
     },
     
     "Indonesia":{
+      "id": "7",
       "title": "The Smile Foundation of Bali",
       "image": "img/indonesia.jpg",
       "link": "http://www.senyumbali.org/",

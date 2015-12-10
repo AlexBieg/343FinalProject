@@ -1,14 +1,14 @@
 <div class="container" id="cart-header">
   <h2>Your Cart</h2>
 	<div id ="charge">
-		<button id="customButton">Purchase</button>
+		<button id="customButton" class="btn btn-primary">Purchase</button>
 	</div>
 </div>
 <div>
 	<h3>Cart Total: ${{total}}</h3>
 </div>
 <div class="row">
-	<div ng-repeat="product in products" class="col-sm-6 col-md-4">
+	<div ng-repeat="product in products" class="col-sm-6 col-md-3 product">
 	  <div class="thumbnail" id="{{product.id}}">
 	    <img ng-src="{{product.image}}" alt="{{product.name}}">
 	    <div class="caption">
