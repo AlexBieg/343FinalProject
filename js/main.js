@@ -58,7 +58,6 @@ myApp.controller('homeController', function($scope, $http) {
 	var query = new Parse.Query(Products);
 	query.find({
 		success: function (results) {
-			console.log(results);
 			for (var i = 0; i < results.length; i++) {
 				var object = results[i]
 				var product = {
@@ -98,7 +97,6 @@ myApp.controller('cartController', function($scope) {
 		Parse.User.current().fetch({
 			success: function(user) {
 				var items = user.get('cart');
-				console.log(items);
 				$scope.products = [];
 				for(var i = 0; i < items.length; i++) {
 					var id = items[i];
@@ -152,7 +150,6 @@ myApp.controller('cartController', function($scope) {
 	  });
 
 	  $('#customButton').on('click', function(e) {
-	  	console.log('hello')
 	    // Open Checkout with further options
 	    handler.open({
 	      name: 'Payment Information',
@@ -175,7 +172,6 @@ myApp.controller('sellController', function($scope, $http) {
 	});
 
 
-	console.log('checking user')
 	if (Parse.User.current() != null) {
 		$('.login-message').hide();
 		$('.logged-in').removeClass('hide');
@@ -187,9 +183,7 @@ myApp.controller('sellController', function($scope, $http) {
 		query.equalTo("user", username);
 		query.find({
 			success: function(results) {
-				console.log(results);
 				for(var i = 0; i < results.length; i++) {
-					console.log("loop");
 					var object = results[i];
 					var item = {
 						name: object.get('name'),
@@ -250,7 +244,6 @@ myApp.controller('sellController', function($scope, $http) {
 myApp.controller('charityController', function($scope){
 	$.getJSON("charity-list.json", function(results) {
 		$scope.charities = results.charities;
-		console.log($scope.charities);
 		$scope.$apply();
 	});
 });
@@ -326,7 +319,6 @@ $(function() {
 		user.set("cart", []);
 		user.signUp(null, {
 			success: function(user) {
-				console.log('signed up');
 				location.reload();
 			},
 			error: function(user, error) {
@@ -340,7 +332,6 @@ $(function() {
 		var form = $(this).parent();
 		Parse.User.logIn(form.find('#user').val(), form.find('#pass').val()).then(
 			function(user) {
-				console.log('signed user in');
 				location.reload();
 			},
 
@@ -352,7 +343,6 @@ $(function() {
 	});
 
 	$(document).on("click", '.sortButton', function() {
-		console.log("here");
 		$('.sortButton').removeClass('active');
 		$(this).addClass('active');
 	});

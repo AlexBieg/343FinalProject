@@ -91,7 +91,6 @@ li{
 	font-size: 10px;
 	float: right;
 	clear: right;
-
 	margin-left: -3em;
 	font-family: 'Roboto', sans-serif;
 	font-size: 10px;
@@ -99,7 +98,7 @@ li{
 
 #search-input{
 	margin-left:1em;
-	height:1.7em; 
+	height:2em; 
 	width:8em; 
 	border-radius:10px; 
 	font-family: 'Roboto', sans-serif;
@@ -421,13 +420,14 @@ h4{
 }
 
 /* Icon when the collapsible content is shown */
-.information.btn:after {
-    font-family: "Glyphicons Halflings";
+.information.btn:before {
+    font-family: "Arial";
     content: "Read Less";
 }
 
 /* Icon when the collapsible content is hidden */
-.information.btn.collapsed:after {
+.information.btn.collapsed:before {
+    font-family: "Arial";
     content: "Read More";
 }
 
