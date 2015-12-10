@@ -420,7 +420,19 @@ h4{
   background-color: white;
 }
 
+/* Icon when the collapsible content is shown */
+.information.btn:after {
+    font-family: "Glyphicons Halflings";
+    content: "Read Less";
+}
+
+/* Icon when the collapsible content is hidden */
+.information.btn.collapsed:after {
+    content: "Read More";
+}
+
 /****SELL PAGE****/
+
 #sellForm input, #sellForm textarea, #sellForm select {
 	margin-bottom: 15px;
 }
