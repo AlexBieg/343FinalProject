@@ -25,6 +25,11 @@ Custom id and classes
   min-height: 600px;
 }
 
+#tot-items {
+  margin-left: 10px;
+  font-size: 20px;
+}
+
 
 /* 
 Nav
@@ -406,13 +411,7 @@ h4{
 	width:20em;
   	padding:10px;
 }
-#descript{
-  font-size:1em;
-  font-family: 'Roboto'
-  sans-serif;
-  margin-top:1em; 
-  margin-left:2em;
-}
+
 .charity-img {
   margin-bottom:1em;
 }
