@@ -1,68 +1,24 @@
-<!-- Nav tabs -->
-<ul class="nav nav-tabs" role="tablist">
-	<li role="presentation" class="active"><a href="#featured" aria-controls="home" role="tab" data-toggle="tab">Featured</a></li>
-	<li role="presentation"><a href="#newest" aria-controls="profile" role="tab" data-toggle="tab">Newest</a></li>
-	<li role="presentation"><a href="#distance" aria-controls="messages" role="tab" data-toggle="tab">Distance</a></li>
-	<li role="presentation" class="dropdown">
-		<a aria-expanded="false" href="#price" id="priceDropdown" class="dropdown-toggle" data-toggle="dropdown" aria-controls="Price">
-			Price 
-			<span class="caret"></span>
-		</a>
-		<ul class="dropdown-menu" aria-labelledby="priceDropdown" id="price-contents">
-			<li><a href="#lowHigh" aria-controls="lowHigh" role="tab" data-toggle="tab">Low to High</a></li>
-			<li><a href="#highLow" aria-controls="highLow" role="tab" data-toggle="tab">High to Low</a></li>
-		</ul>
-	</li>
-</ul>
+<p>Sort By: {{}}</p>
+<a href="#" ng-click="sortBy='added'"><button class="btn btn-default xsmall sortButton">Recently Added</button></a>
+<a href="#" ng-click="sortBy='price'"><button class="btn btn-default xsmall sortButton">Price: Low to High</button></a>
+<a href="#" ng-click="sortBy='-price'"><button class="btn btn-default xsmall sortButton">Price: High to Low</button></a>
 
-  <!-- Tab panes -->
-<div class="tab-content">
-	<div role="tabpanel" class="tab-pane active" id="featured">
-		<div class="row">
-		  <div ng-repeat="product in products" class="col-sm-6 col-md-3">
-		    <div class="thumbnail" id="{{product.id}}">
-		      <img ng-src="{{product.image}}" alt="{{product.name}}" id="product-image">
-		      <div class="caption">
-		        <h3>{{product.name}}</h3>
-		        <p style = "text-align:center;">{{product.charity}}</h5>
-		        <div style = "margin-left:auto;margin-right:auto">
-		        	<p><a ng-click="addToCart(product.id)" ng-show="{{showIfLogged()}}" class="btn btn-primary" role="button" id="action1">Add to Cart</a> 
-		       		<a class="btn btn-default" role="button" id="action2">ReadMore</a>
-		       	</p>
-		       </div>
-		       	<p id="success" class="hide alert alert-success">
-		       		Hooray, You added it to your cart!
-		       	</p>
-		      </div>
-		    </div>
-		  </div>
+<div class="row">
+	<div ng-repeat="product in products | orderBy:sortBy" class="col-sm-6 col-md-3">
+		<div class="thumbnail" id="{{product.id}}">
+			<img ng-src="{{product.image}}" alt="{{product.name}}" id="product">
+			<div class="caption">
+				<h3>{{product.name}}</h3>
+				<p style = "text-align:center;">{{product.charity}}</h5>
+				<div id="addToCart">
+					<p><a ng-click="addToCart(product.id)" ng-show="{{showIfLogged()}}" class="btn btn-primary" role="button" id="addLink">Add to Cart</a> 
+						<a class="btn btn-default" role="button" id="readMore">ReadMore</a>
+					</p>
+				</div>
+				<p id="success" class="hide alert alert-success">
+					Hooray, You added it to your cart!
+				</p>
+			</div>
 		</div>
-
 	</div>
-
-
-	<div role="tabpanel" class="tab-pane" id="newest"></div>
-		<div class="row">
-		  <div ng-repeat="product in productsByDate" class="col-sm-6 col-md-4">
-		    <div class="thumbnail" id="{{product.id}}">
-		      <img ng-src="{{product.image}}" alt="{{product.name}}">
-		      <div class="caption">
-		        <h3>{{product.name}}</h3>
-		        <p>{{product.charity}}</p>
-		        <p>
-		        	<a ng-click="addToCart(product.id)" ng-show="{{showIfLogged()}}" class="btn btn-primary" role="button">Add to Cart</a> 
-		       		<a class="btn btn-default" role="button">ReadMore</a>
-		       	</p>
-		       	<p id="success" class="hide alert alert-success">
-		       		Hooray, You added it to your cart!
-		       	</p>
-		      </div>
-		    </div>
-		  </div>
-		</div>
-
-
-	<div role="tabpanel" class="tab-pane" id="distance">Distance</div>
-	<div role="tabpanel" class="tab-pane" id="lowHigh">Low to High</div>
-	<div role="tabpanel" class="tab-pane" id="highLow">High to Low</div>
 </div>
