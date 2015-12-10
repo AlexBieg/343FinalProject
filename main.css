@@ -73,16 +73,28 @@ li{
 	margin-bottom:-.5em;
 }
 
+.sortButton, #sortBy {
+	float: left;
+}
+
+#homeDiv {
+	height: 50px;
+}
+
+#productRow {
+	clear: both;
+}
+
 #search-form{
 	display: inline-block; 
-<<<<<<< HEAD
-	margin-left: 1em;
-	margin-bottom:.2em;
-=======
+	font-family: 'Roboto', sans-serif;
+	font-size: 10px;
+	float: right;
+	clear: right;
+
 	margin-left: -3em;
 	font-family: 'Roboto', sans-serif;
 	font-size: 10px;
->>>>>>> 2e8eb8f24f7cb7b5f79a3f1eb004aced16a94a9f
 }
 
 #search-input{
