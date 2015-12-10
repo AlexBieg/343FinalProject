@@ -208,6 +208,7 @@ myApp.controller('sellController', function($scope, $http) {
 
 	//adds item to parse database
 	$scope.addItem = function() {
+		console.log('adding item');
 		var product = new Products();
 		product.set('name', $scope.name);
 		product.set('price', $scope.price);
