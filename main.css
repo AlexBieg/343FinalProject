@@ -424,6 +424,6 @@ margin-right:10px;
   background-color: white;
 }
 /****SELL PAGE****/
-#sellForm input, #sellForm textarea {
-	margin-bottom: 10px;
+#sellForm input, #sellForm textarea, #sellForm select {
+	margin-bottom: 15px;
 }
