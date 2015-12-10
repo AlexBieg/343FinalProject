@@ -1,10 +1,11 @@
 <div>
 	<div>
-		<ul>
-		<li><a href="#" ng-click="sortBy='added'" class = "top-buttons"><button class="btn btn-default xsmall sortButton active">Recently Added</button></a></li>
-		<li><a href="#" ng-click="sortBy='price'" class = "top-buttons"><button class="btn btn-default xsmall sortButton">Price: Low to High</button></a></li>
-		<li><a href="#" ng-click="sortBy='-price'" class = "top-buttons"><button class="btn btn-default xsmall sortButton">Price: High to Low</button></a></li>
-		<li>
+		<p>Sort By: </p>
+		<button ng-click="sortBy='added'" class="btn btn-default xsmall sortButton active">Recently Added</button>
+		<button ng-click="sortBy='price'" class="btn btn-default xsmall sortButton">Price: Low to High</button>
+		<button ng-click="sortBy='-price'" class="btn btn-default xsmall sortButton">Price: High to Low</button>
+	</div>
+	<div>
 		<form class="navbar-search" id="search-form">
 			<input type="text" class="form-control" id="search-input" ng-model="searchValue" placeholder="Search">
 		</li>
@@ -13,7 +14,7 @@
 </div>
 
 <div class="row">
-	<div ng-repeat="product in products | orderBy:sortBy | filter:searchValue" class="col-sm-6 col-md-3">
+	<div ng-repeat="product in products | orderBy:sortBy | filter:searchValue" class="col-sm-6 col-md-3 product">
 		<div class="thumbnail" id="{{product.id}}">
 			<img ng-src="{{product.image}}" alt="{{product.name}}" id="product">
 			<div class="caption">
