@@ -144,6 +144,10 @@ myApp.controller('cartController', function($scope) {
 	    token: function(token) {
 	      // Use the token to create the charge with a server-side script.
 	      // You can access the token ID with `token.id`
+	    },
+	    closed: function() {
+	    	emptyCart();
+	    	location.reload();
 	    }
 	  });
 
@@ -250,6 +254,11 @@ myApp.controller('charityController', function($scope){
 		$scope.$apply();
 	});
 });
+
+var emptyCart = function() {
+	Parse.User.current().set('cart', []);
+	Parse.User.current().save();
+}
 
 //remove one of the given item id from the current users cart.
 var removeFromCart = function(id) {
