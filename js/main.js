@@ -53,7 +53,7 @@ myApp.controller('cartNumController', function($scope) {
 
 //home page
 myApp.controller('homeController', function($scope, $http) {
-	$scope.sortBy = "added";
+	$scope.sortBy = "-added";
 	$scope.products = [];
 	var query = new Parse.Query(Products);
 	query.find({
