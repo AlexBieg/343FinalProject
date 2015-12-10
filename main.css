@@ -22,7 +22,7 @@ Custom id and classes
 }
 
 .product {
-  height: 480px;
+  min-height: 600px;
 }
 
 
@@ -91,6 +91,10 @@ li{
 	font-size: 10px;
 	float: right;
 	clear: right;
+
+	margin-left: -3em;
+	font-family: 'Roboto', sans-serif;
+	font-size: 10px;
 }
 
 #search-input{
