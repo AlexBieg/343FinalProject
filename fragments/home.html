@@ -1,10 +1,16 @@
-<p>Sort By: {{}}</p>
-<a href="#" ng-click="sortBy='added'"><button class="btn btn-default xsmall sortButton">Recently Added</button></a>
-<a href="#" ng-click="sortBy='price'"><button class="btn btn-default xsmall sortButton">Price: Low to High</button></a>
-<a href="#" ng-click="sortBy='-price'"><button class="btn btn-default xsmall sortButton">Price: High to Low</button></a>
+<div>
+	<p>Sort By: {{}}</p>
+	<a href="#" ng-click="sortBy='added'"><button class="btn btn-default xsmall sortButton">Recently Added</button></a>
+	<a href="#" ng-click="sortBy='price'"><button class="btn btn-default xsmall sortButton">Price: Low to High</button></a>
+	<a href="#" ng-click="sortBy='-price'"><button class="btn btn-default xsmall sortButton">Price: High to Low</button></a>
+	<form class="navbar-search" id="search-form">
+		<input type="text" class="form-control" id="search-input" ng-model="searchValue">	
+	</form>
+	<img src = "img/mg-b.png" id="mglass"></img>
+</div>
 
 <div class="row">
-	<div ng-repeat="product in products | orderBy:sortBy" class="col-sm-6 col-md-3">
+	<div ng-repeat="product in products | orderBy:sortBy | filter:searchValue" class="col-sm-6 col-md-3">
 		<div class="thumbnail" id="{{product.id}}">
 			<img ng-src="{{product.image}}" alt="{{product.name}}" id="product">
 			<div class="caption">
