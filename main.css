@@ -67,7 +67,7 @@ li{
 	margin-right:3em;
 }
 
-#others{
+.others{
 	margin-left:.5em;
 	margin-right:3em; 
 	margin-bottom:-.5em;
@@ -75,16 +75,23 @@ li{
 
 #search-form{
 	display: inline-block; 
+<<<<<<< HEAD
 	margin-left: 1em;
 	margin-bottom:.2em;
+=======
+	margin-left: -3em;
+	font-family: 'Roboto', sans-serif;
+	font-size: 10px;
+>>>>>>> 2e8eb8f24f7cb7b5f79a3f1eb004aced16a94a9f
 }
 
 #search-input{
 	margin-left:1em;
-	height:1.5em; 
+	height:1.7em; 
 	width:8em; 
 	border-radius:10px; 
 	font-family: 'Roboto', sans-serif;
+	display: inline-block;
 }
 
 #mglass{
@@ -102,7 +109,8 @@ li{
 	width:1.8em; 
 	height:1.8em;
 	margin-left:1em; 
-	margin-right:-1em
+	margin-right:-1em;
+	margin-top:-1em;
 }
 
 /*
@@ -184,7 +192,7 @@ h5{
 }
 
 .btn:hover {
-    color:#E36C6C;
+    color:black;
 }
 
 a{
@@ -195,6 +203,10 @@ a:hover {
     color:black;
     text-decoration: none;
 }
+
+.headerLink:hover, #contactUs {
+	text-decoration: underline;
+	}
 
 footer{
 	padding:0px 0px;
@@ -214,6 +226,12 @@ footer{
 
 #addLink, #readMore {
 	margin-top:1em;
+}
+
+.top-buttons{
+	display: inline-block;
+	margin-left: -6em;
+	margin-right:4em;
 }
 
 /****** LOGIN MODAL ******/
